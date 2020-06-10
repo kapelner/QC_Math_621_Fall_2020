@@ -1,0 +1,257 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{hyperref}
+\usepackage{datetime}
+\usepackage[auth-sc,affil-sl]{authblk}
+\usepackage{color}
+\usepackage{placeins}
+\usepackage{enumerate}
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{blue}{rgb}{0,0,0.7}
+\newcommand{\inblue}[1]{\color{blue}\textbf{#1} \color{black}}
+\definecolor{green}{rgb}{0.133,0.545,0.133}
+\newcommand{\ingreen}[1]{\color{green}\textbf{#1} \color{black}}
+\definecolor{yellow}{rgb}{1,0.549,0}
+\newcommand{\inyellow}[1]{\color{yellow}\textbf{#1} \color{black}}
+\definecolor{red}{rgb}{1,0.133,0.133}
+\newcommand{\inred}[1]{\color{red}\textbf{#1} \color{black}}
+\definecolor{purple}{rgb}{0.58,0,0.827}
+\newcommand{\inpurple}[1]{\color{purple}\textbf{#1} \color{black}}
+\definecolor{brown}{rgb}{0.55,0.27,0.07}
+\newcommand{\inbrown}[1]{\color{brown}\textbf{#1} \color{black}}
+
+\newcommand{\coursewebpage}{\href{https://github.com/kapelner/QC_Math_621_Fall_2020}{course homepage}}
+
+\newcommand{\qu}[1]{``#1''}
+
+
+\title{MATH 368/621 Fall 2020 (3 credits) \\ Course Syllabus}
+
+\author[]{Adam Kapelner, Ph.D.}
+
+\affil[]{Queens College, City University of New York}
+\settimeformat{ampmtime}
+\date{\small document last updated \today ~\currenttime }
+
+\begin{document}
+\maketitle
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{rl}
+Instructor & Professor Adam Kapelner \\
+Office & 604 Kiely Hall \\
+Contact & \url{kapelner@qc.cuny.edu} \\
+Section A Time / Loc & Monday and Wednesday 3:10-4:25PM Kiely 258 \\
+Section B Time / Loc & Monday and Wednesday 7-8:15PM Kiely 258 \\
+Office Hours / Loc & Monday and Wednesday 4:25-4:55PM, 6:15-6:35PM Kiely 258 \\
+Course Homepage & \href{https://github.com/kapelner/QC_Math_621_Fall_2020}{https://github.com/kapelner/QC\_Math\_621\_Fall\_2020} \\
+\end{tabular}
+\end{table}
+
+\section*{Course Overview}
+
+MATH 368/621 is an introduction to the intermediate concepts and techniques of probability. Moreover it is a course on \textit{distribution theory} and contains derivations from scratch of $\approx$30 of the most commonly applied and studied probability models, and those models that are found when employing statistical tests. Thus, this class derives much of the theory behind statistics and data science. I plan to follow the curriculum when I taught the class previously and the homepage of the previous course can be found \href{https://github.com/kapelner/QC_Math_621_Fall_2017}{here} and \href{https://github.com/kapelner/QC_Math_621_Fall_2019}{here}. Topics to be tentatively covered are below (in rough order of coverage):
+
+\begin{itemize}
+\itemsep -0.0em 
+\item Scalar discrete and continous random variables (rv's) and their PMFs, PDFs, CDFs using the indicator function, supports, parameter spaces, quantile functions.
+\begin{itemize}
+\item Discrete models include the Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Skellam and BetaBinomial
+\item Continuous models include the Uniform, Exponential, Erlang, Logistic, ParetoI, Laplace, Gumbel, Weibull, Frechet, Gamma, Beta, Lomax, Normal, LogNormal, Chi-squared, Student's T, Fisher-Snecodor's F and Cauchy
+\end{itemize}
+\item Survival modeling with some extreme value theory
+\item Vector-valued rv's including joint densities, conditional densities, expectation vectors, variance-covariance matrices, correlation matrices and models include the Multinomial and Multivariate Normal (and Mahalanobis Distance)
+\item The gamma function and the beta function (full, incomplete and regularized)
+\item Convolutions of discrete and continuous rv's
+\item The Poisson Process
+\item Law of Iterated Expecation and Law of Total Variance
+\item Transformation of single rv's (and multiple rv's using Jacobian determinants)
+\item Truncations of rv's
+\item CDF/PDF of order statistics of continuous rv's
+\item Mixture and compound distributions
+\item Scalar and vector characteristic functions, properties and Levy's Continuity Thm
+\item Central Limit Theorem and its implications, Weak Law of Large Numbers
+\item Cochran's Theorem, quadratic forms and the derivation of Student's T statistic, 
+\item Markov's, Chebyshev's, Chernoff, Cauchy-Schwartz, Jensen's and Holder's inequalities and consequences
+\item Convergence of rv's in distribution, probability and law (but not almost everywhere)
+\end{itemize}
+
+\textbf{This is more of a typical mathematics theory course than the rest of the data science series.} But we will still attempt to keep our eye on developing ideas and concepts for helping to make decisions in the real world. Thus we may make limited use of computation using the \texttt{R} statistical language.
+
+\subsection*{Prerequisites}
+
+MATH 241 (basic probability), 201 (multivariable calculus) and 231 (linear algebra) or equivalents. I expect a 241 class that covers more or less what I cover in 241. See the course homepage for links under \qu{prerequisite review}. The multivariable calculus and linear algebra we will use I will try to review in class.
+
+\section*{The 621 Section}
+
+You are the students taking this course as part of a masters degree in mathematics. Thus, there will be \textit{extra} homework problems for you and you will be graded on a separate curve.
+
+\section*{Course Materials}
+
+\paragraph{Textbook:} Introduction to Probability Theory by Hoel, Port \& Stone. This book is out of print but you can buy it used on \href{https://www.amazon.com/Introduction-Probability-Theory-Paul-Hoel/dp/039504636X/ref=sr_1_1?ie=UTF8&qid=1503515517&sr=8-1&keywords=introduction+to+probability+theory+hoel}{Amazon} for $\approx$\$20, a reasonable price (as far as textbooks go). There is no excuse not to have this book. It is \textit{required}. However, I will not ususally be teaching \qu{from the book} --- most of the material in the class comes from the lecture notes. The textbook is a way to get ``another take'' on the material. The textbook covers about only half of the material done in class (yes, sometimes we will be following the textbook page by page). For the other half, you will have to make use of other resources.
+
+\paragraph{Computer Software:} We will also be using \texttt{R} which is a free, open source statistical programming language and console. You can download it from: \url{http://cran.mirrors.hoobly.com/}. I do not expect you to do \textit{any} programming. I will be giving you \texttt{R} code to run and expect you to interpret the results based on concepts explained during the course.
+
+\paragraph{Calculator:} You can use a TI-84, 85, 89 or any calculator which you wish. I strongly suggest you use \href{http://www.wolframalpha.com/}{Wolfram Alpha} and its smartphone app.
+
+\section*{Announcements}
+
+Announcements will be made via email. I am known to send a couple emails per week on important issues. Thus, I will need the email address that you reliably check. The default email is whatever happens to be in CUNYfirst which many of you do not check. (See Homework \#0 for more information).
+
+\section*{Lectures}
+
+I have a no phone policy during lectures. Only pen / pencil and paper. Tablets okay if only for taking notes. Classes are 75 minutes and run from Wednesday, August 28 until Wednesday, December 11 for a total of 28 class meetings. However, only 23 of these will be lectures as two days are reserved for the two midterm exams (in class) and two meetings prior are in-class reviews. The exam schedule is given on page~\pageref{subsec:exam_schedule}.
+
+\subsection*{Three Sections}
+
+This class runs in three identical sections. You can feel free to come to whichever section fits your schedule.
+
+%\subsection*{Reschedule of One Lecture}
+%
+%Due to the Jewish holidays, I must miss one lecture day: Monday, October 21 which will be made up in the following way. I will use the lecture period before Midterm II, November 11, as a full lecture and reschedule the review session to either the Friday before (November 8) or the Tuesday before Midterm II, November 12. The class will vote democractically on the day/time. 
+
+\subsection*{Lecture Upload}
+
+As many previous students have noted, my handwritten notes are useful to me and not to many others. Thus, I will be rewarding students for taking notes, scanning them in and sending them to me. You will be rewarded in two ways: (1) if you do this for more than 10 lectures, you will be given the automatic 5 points (see grading policy on page \pageref{sec:grading}) for your classroom participation grade and (2) you have the option for me to say your name publicly on the \coursewebpage. Make sure you follow these instructions:
+
+\begin{itemize}
+\item You have \emph{one week only} from the time of the lecture to email me lecture notes.
+\item There must be \emph{one} file and it must be in PDF format \textit{only}.
+\item The file must be named \texttt{lecxxkapelner.pdf} where you replace \texttt{xx} with two digits corresponding to the lecture number i.e. 01, 02, 09, 10, \ldots, 23 and you replace \texttt{kapelner} with your last name in all lowercase letters. If your file is renamed incorrectly, I will tell you to rename it and send it back.
+\item The file must be $<$2MB. No exceptions. I will tell you to shrink the PDF and resend.
+\end{itemize}
+
+\section*{Homework}
+
+There will be 7--10 homework assignments. Homeworks will be assigned and placed on the \coursewebpage~ and will usually be due a week later in class. Homework will be \textbf{graded} out of 100 with extra credit getting scores possibly $> 100$. I will be doing the grading. I will grade an \textit{arbitrary subset of the assignment} which is determined after the homework is handed in. But you will still be penalized for leaving questions blank regardless of whichever subset I choose to grade. 
+
+Homework must be printed, neat and stapled (\textbf{it cannot be emailed to me}). Homework can be given to me in class or delivered to my office in Kiely Hall. \textit{Homework cannot be handed in to my mail slot in the Kiely mathematics office} (unless you want it to be counted as late).
+
+Graded homework will be returned in class. Regrades are handled during office hours or right after class is over. Scores for homeworks are finalized one week after the graded copies are handed back. Thereafter there will be no changes and no re-grading. Do not delay checking your graded homeworks. I am not perfect and I do make mistakes. It is your obligation to find the mistakes and report them.
+
+You are encouraged to seek help from me if you have questions. After class and during office hours are good times. \ingreen{You are highly recommended to work with each other and help each other.} \inred{You must, however, submit your own solutions, \textit{with your own write-up} and in \textit{your own words}. There can be no collaboration on the actual \textit{writing}. Failure to comply will result in severe penalties.} The university honor code is something I take seriously and I send people to the dean every semester for violations.
+
+%Homework will be similar to previous semesters' homeworks. I will change questions here and there. If you are copying from a previous students' homeworks, we will eventually find you since the criminal mind eventually will slip. Honesty is the best policy. It's not worth me giving you a zero for your entire homework grade --- you will likely be lowered a letter grade and a half.
+
+\subsection*{Philosophy of Homework}
+
+
+Homework is the \textit{most} important part of this course.\footnote{In one student's \href{http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1951051}{observation}, I give a \qu{mind-blowing homework} every week.} Success in Statistics and Mathematics courses comes from experience in working with and thinking about the concepts. It's kind of like weightlifting; you have to lift weights to build muscles. My job as an instructor is to provide assistance through your \href{http://en.wikipedia.org/wiki/Zone_of_proximal_development}{zone of proximal development}. With me, you can grow more than you can alone. To this effect, homework problems are color coded \ingreen{green} for easy, \inyellow{yellow} for harder, \inred{red} for challenging and \inpurple{purple} for extra credit. You need to know how to do all the greens by yourself. If you've been to class and took notes, they are a joke. Yellows and reds: feel free to work with others. Only do extra credits if you have already finished the assignment. The \qu{[Optional]} problems are for extra practice --- highly recommended for exam study.
+
+\subsection*{Time Spent on Homework }
+
+This is a three credit course. Thus, the amount of work outside of the 2.5hr in-class time per week is 6-9 hours. I will aim for 6hr of homework per week on average. However, doing the homework well is your sole responsibility since by doing the homework you will study and understand the concepts in the lectures.
+
+\subsection*{Late Homework}
+
+Late homework will be penalized 10 points per day for a maximum of five days. Do not ask for extensions; just hand in the homework late. After five days, \textbf{you can hand it in whenever you want} until the last day of class, Wednesday, December ??. As far as I know, this is one of the most lenient and flexible homework policies in college. I realize things come up. Do not abuse this policy; you will fall far, far behind.
+
+\subsection*{Homework \LaTeX~Bonus Points}
+
+Part of good mathematics is its beautiful presentation. Thus, \ingreen{there will be a 1--7 point bonus} added to your homework grade  for typing up your homework using the \LaTeX ~typesetting system based on the elegance of your presentation. The bonus is arbitrarily determined by me.
+
+I recommend using \href{http://overleaf.com}{overleaf} to write up your homeworks (make sure you upload both the hw\#.tex and the preamble.tex file). This has the advantage of (a) not having to install anything on your computer and not having to maintain your \LaTeX ~installation (b) allowing easy collaboration with others (c) alway having a backup of your work since it's always on the cloud. If you insist to have \LaTeX ~running on your computer, you can download it for Windows \href{http://www.miktex.org/download}{here} and for MAC \href{http://www.tug.org/mactex/}{here}. For editing and producing PDF's, I recommend \TeX works which can be downloaded \href{http://www.tug.org/texworks/#Getting_TeXworks}{here}. Please use the \LaTeX ~code provided on the \coursewebpage ~for each homework assignment. 
+
+If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+Since this is extra credit, do not ask me for help in setting up your computer with \LaTeX~ in class or in office hours. Also, \textbf{never share your \LaTeX~code with other students} --- it is cheating.
+
+\subsection*{Homework Extra Credit}
+
+There will be many extra credit questions sprinkled throughout the homeworks (although less for the 621 Masters students). They will be worth a variable number of points arbitrarily assigned based on my perceived difficulty of the exercise. Homework scores in the 140's are not unheard of. They are a good boost to your grade; I once had a student go from a B to an A- based on these bonuses.
+
+\subsection*{Homework \#0}
+
+For your first homework (due immediately). You must:
+
+\begin{enumerate}[(1)]
+\item email me at \href{kapelner@qc.cuny.edu}{kapelner@qc.cuny.edu} from the email address you wish to be contacted at for this course (most commonly this is a gmail address) and in the email,
+\item you must say \qu{My name is $<$Your Full Name as appears in the registrar$>$},
+%\item you attach a picture of you so I can memorize and know your name. (You can also say \qu{I opt-out of picture} and state your reason). If you took my class before, you do not need to send a picture.
+\end{enumerate}
+
+
+\noindent \inred{This constitutes a contract --- you are agreeing to this syllabus.} \\
+
+I will email you back a password you can use to check the \href{http://gradesly.com}{gradesly}, the course grading site once the site is up (which should be a couple weeks into the semester). \\
+
+This assignment is due Friday, August ?? at 5PM and will receive a grade of 0 or 100 with the usual 10 point penalty for lateness. If you took one of my classes before, I do not store your personal email address! You still have to do Homework \#0.
+
+
+\section*{Examinations}
+
+Examinations are solely based on homeworks! If you can do all the green and yellow problems on the homeworks, the exams should not present any challenge. I will \textit{never} give you exam problems on concepts which you have not seen at home on one of the weekly homework assignments. There will be three exams and the schedule is below.
+
+\subsection*{Exam Schedule}\label{subsec:exam_schedule}
+
+\begin{itemize}
+\itemsep -0.0em 
+\item Midterm examination I will be Wednesday, September ?? in class
+\item Midterm examination II will be Wednesday, November ?? in class
+\item The final examination will be 1:45-3:45PM in KY424 Wednesday, December ?? for some students, 6:15-8:15PM in KY312 Monday, December ?? for other students. I will try to move the Dec 18 students to Dec 16 and possibly open another exam period. This means those students get two more days of winter vacation. 
+\end{itemize}
+
+\subsection*{Exam Materials}
+
+I allow you to bring any calculator you wish but it cannot be your phone. The only other items allowed are pencil and eraser. \inred{No food, only drinks.} I do not recommend using pen but it if you must...
+
+I also allow \qu{cheat sheets} on examinations. For both midterms, you are allowed to bring one 8.5'' $\times$ 11'' sheet of paper (front and back). \inred{Two sheets single sided are not allowed.} On this paper you can write anything you would like which you believe will help you on the exam. For the final, you are allowed to bring three 8.5'' $\times$ 11'' sheet of paper (front and back). \inred{Six sheets single sided are not allowed.} I will be handing back the cheat sheets so you can reuse your midterm cheat sheets for the final if you wish. 
+
+\subsection*{Cheating on Exams}
+
+If I catch you cheating, you can either take a zero on the exam, or you can roll the dice before the University Honor Council who may choose to suspend you.
+
+
+\subsection*{Missing Exams}
+
+There are no make-up exams. If you miss the exam, you get a zero. If you are sick, I need documentation of your visit to a hospital or doctor. Expect me to call the doctor or hospital to verify the legitimacy of your note. If you need to leave the country for an emergency, I will expect proper documentation as well.
+
+
+\subsection*{Missing the Final}
+
+Automatic WU grade. You can get an F by coming and \qu{taking} the final.
+
+\subsection*{Special Services}
+
+If you are a student who takes exams at the special services center, I need to see your blue slip one week before the exam to make proper arrangements with the center.
+
+\section*{Class Participation (and attendance)}
+
+I will be taking attendance during the class. Attendance counts towards the class participation portion of your grade in equal part with how often you ask and answer questions during the lecture.
+
+
+\section*{Grading and Grading Policy}\label{sec:grading}
+
+Your course grade will be calculated based on the percentages as follows: 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l}
+Homework & 20\% \\
+Class participation & 5\% \\
+Midterm Examination I & 20\%\\
+Midterm Examination II & 20\%\\
+Final Examination & 35\%
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+The semester is split into three periods (1) from the beginning until midterm I (2) from midterm I to midterm II (3) from midterm II until the final. The material in each of the periods is tested evenly; thus, it counts the same towards your grade. Since there is 75\% of the grade allotted to exams, there is 25\% allotted to each period. Thus, the final is upweighted towards the material covered in the third period. In summary, the final will have 5/35 points $\approx$ 14\% for the first period's material, 5/35 points $\approx$ 14\% for the second period's material and 25/35 points $\approx$ 71\% for the last period's material. A good strategy for the final is to just study the material after Midterm II and minimal studying for the previous material.
+
+\subsection*{The Grade Distribution}
+
+As this is a small and advanced class, the class is curved and the curve will be quite generous. If you do your homework and demonstrate understanding on the exams, you should expect to be rewarded with an A or a B. $\leq$C's are for those who \qu{dropped out} somewhere mid-semester or who cannot demonstrate basic understanding. To give an idea, of the students who finished the course last time I taught it, there were 43\% A's and 29\% B's but I am under \inred{no obligation} to repeat this curve.
+
+\subsection*{Checking your grade and class standing}
+
+You can always check your grades in real-time using the \href{http://gradesly.com}{grading site}. You will enter in your QC ID number and the password I will provide to you after homework 0.
+
+
+
+\section*{Auditing}
+
+Auditors are welcome in both sections. They are encouraged to do all homework assignments. I will even grade them. Note that the university does not allow auditors to take examinations.
+
+\end{document}
