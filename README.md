@@ -53,7 +53,7 @@ This class has prerequesites of basic probability (Math 241), some linear algebr
 * Homework 3 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw03/hw03.pdf) (due 10/4)
 * Homework 2 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw02/hw02.pdf) (due 9/20)
 * Homework 1 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw01/hw01.pdf) (due 9/13)-->
-* Homework 0 [(syllabus, page 6)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/syllabus/syllabus.pdf?raw=true) (due 8/30)
+* Homework 0 [(syllabus, page 6)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/syllabus/syllabus.pdf?raw=true) (due 8/28)
 
 
 ## Exams
