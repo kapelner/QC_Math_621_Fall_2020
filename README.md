@@ -4,7 +4,7 @@ This is the course homepage for Math 368 / 621 at Queens College, City Universit
 
 ## Lectures
 
-My lectures can be listened to as youtube tracks and lecture notes are also scanned in as PDF files contributed by students and myself.
+My lecture videos can be watched on slack and lecture notes are also scanned in as PDF files contributed by students and myself.
 
 <!--
 * Lecture 23 (video on slack) [(Jan Bazant)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/lectures/lec23bazant.pdf) [(Mike Digiorgio)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/lectures/lec23digiorgio.pdf) [(Prof)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/lectures/lec23kap.pdf)
