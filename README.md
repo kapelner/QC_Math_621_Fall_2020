@@ -74,10 +74,13 @@ This class has prerequesites of basic probability (Math 241), some linear algebr
 
 I *want* you to come to office hours! My office hours are:
 
-<!--
-Time: Monday and Wednesday 4:25-5:10PM
-Location: Kiely Hall 312
--->
+Time: Monday and Wednesday 4:25-4:55PM
+Location: zoom
+
+The TA's (Tzipora Horowitz's) office hours are:
+
+Time: Monday and Wednesday 6:15-6:45PM
+Location: zoom
 
 ## Grades and Class Standing
 
