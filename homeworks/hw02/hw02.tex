@@ -1,0 +1,302 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 368/621 Fall \the\year{} Homework \#2}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due by email noon Tuesday, September 22, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, review from math 241 about conditional probability, expectation and variance then read on your own about the multinomial distribution, conditional vector expectation, covariances, variance-covariance matrices.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 7 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+
+
+
+
+\problem{These exercises will introduce review expectation and variance and introduce covariance as well as expectation and variance of multidimensional (vector) r.v's.}
+
+\begin{enumerate}
+
+\intermediatesubproblem{Consider a sequence of independent r.v.'s $\Xoneton$ and prove that 
+
+\beqn
+\expe{\prod_{i=1}^n X_i} = \prod_{i=1}^n \expe{X_i}.
+\eeqn}\spc{4}
+
+\easysubproblem{Prove that $\cov{X_1}{X_2} = \expe{(X_1 - \mu_1)(X_2 - \mu_2)}$.}\spc{1}
+
+\easysubproblem{Prove that $\cov{X}{X} = \var{X}$.}\spc{1}
+
+\easysubproblem{Prove that $\cov{X_1}{X_2} = \cov{X_2}{X_1}$.}\spc{1}
+
+\easysubproblem{Prove that $\cov{a_1 X_1}{a_2 X_2} = a_1 a_2 \cov{X_1}{X_2}$.}\spc{1}
+
+\easysubproblem{Prove that $\cov{X_1 + X_3}{X_2} = \cov{X_1}{X_2} + \cov{X_2}{X_3}$.}\spc{2}
+
+\intermediatesubproblem{[MA] Prove that
+
+\beqn
+\cov{\sum_{i \in A} X_i}{\sum_{j \in B} Y_j} = \sum_{i \in A} \sum_{j \in B} \cov{X_i}{Y_j}
+\eeqn.}\spc{7}
+
+
+\hardsubproblem{Prove that
+
+\beqn
+\var{\sum_{i = 1}^n X_i} = \sum_{i = 1}^n \sum_{j = 1}^n \cov{X_i}{X_j}
+\eeqn
+
+without using the vector formulas.}\spc{9}
+
+\easysubproblem{Prove $\expe{a\X + \c} = a\muvec + \c$ where the following are constants: $a \in \reals, \c \in \reals^K$.}\spc{2}
+
+\easysubproblem{Prove $\var{\c^\top \X} = \c^\top \Sigma \c$ where $\c \in \reals^K$, a constant and $\Sigma := \var{\X}$, the variance-covariance matrix of the vector r.v. $\X$. This is marked easy since it's in the notes.}\spc{8}
+
+\easysubproblem{Why is $\c^\top \Sigma \c$ called a \qu{quadratic form?} Read about it on wikipedia.}\spc{2}
+\end{enumerate}
+
+
+\problem{These exercises are about the Multinomial distribution.}
+
+\begin{enumerate}
+
+
+\easysubproblem{Explain in English why $\B \sim \multinomial{1}{\p}$ is the multidimensional generalization of the Bernoulli r.v.}\spc{3}
+
+\easysubproblem{Explain in English why the following should be true. Remember how the sampling from the bag works.
+
+\beqn
+\binom{n}{x_1, x_2, \ldots, x_K} = \binom{n}{x_1} \binom{n - x_1}{x_2} \binom{n - (x_1 + x_2)}{x_3} \cdot \ldots \cdot \binom{n - (x_1 + x_2 + \ldots x_{K-1})}{x_K}
+\eeqn}\spc{2}
+
+\intermediatesubproblem{Prove the combinatorial identity in (b).}\spc{3}
+
+
+
+\easysubproblem{Consider the following bag of marbles.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.4in]{marbles.jpg}
+\end{figure}
+
+Draw from replacement 37 times. What is the probability of getting 10 red, 17 green, 6 blue and 4 yellow? Compute explicitly to the nearest two significant digits.}\spc{7}
+
+\hardsubproblem{[MA] If $\X \sim \multinomial{n}{\p}$, prove that its JMF sums to one, i.e. $\sum_{\x \in \support{\X}} p_{\X}(\x) = 1$.}\spc{7}
+
+\hardsubproblem{[MA] If $\X \sim \multinomial{n}{\p}$, prove that any marginal distribution is binomial with $n$ and $p_j$ as parameters i.e. 
+
+\beqn
+p_{X_j}(x_j) = \binomial{n}{p_j}
+\eeqn
+
+We only assumed this in class because it makes sense conceptual given balls being sampled from an urn, but it was never explicitly proven.}\spc{9}
+
+\extracreditsubproblem{[MA] If $\X \sim \multinomial{n}{\p}$, find the JMF of any subset of $X_1, \ldots, X_k$. Is it technically multinomial? This is not much harder than the previous problem if formulated carefully.}\spc{8}
+
+\intermediatesubproblem{Explain in English why the following should be true. Remember how the sampling from the bag works.
+
+\beqn
+\B_1, \ldots, \B_n \iid \multinomial{1}{\p} \quad \text{then} \quad \X := \sum_{i=1}^n \B_i \sim \multinomial{n}{\p}
+\eeqn}\spc{4}
+
+\intermediatesubproblem{Find the answer by reasoning in English. No need to prove mathematically.
+
+\beqn
+\X_1, \ldots, \X_r \iid \multinomial{n}{\p} \quad \text{then} \quad \T := \sum_{i=1}^r \X_i \sim ~?
+\eeqn}\spc{2}
+
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$, find $p_{\X_{-j}|X_{j}}(\x_{-j}, x_j)$ . This is marked easy since it's in the notes.}\spc{10}
+
+\extracreditsubproblem{[MA] If $\X \sim \multinomial{n}{\p}$, find a proof for $\cov{X_i}{X_j} = -np_i p_j$ that is qualitatively different than the one we did in class.}\spc{12}
+
+\intermediatesubproblem{If $\X \sim \multinomial{n}{\p}$ where $\dime{\X} = K$ and $\p = \oneover{K}\onevec_K$. What is the limit of  $\cov{X_i}{X_j}$ as $K$ gets large but $n$ is fixed. Why does this make sense?}\spc{5}
+
+\easysubproblem{Correlation $\rho$ is a unitless measure bounded between $\bracks{-1, 1}$ and is a type of normalized covariance metric. It is defined for two r.v.'s as 
+
+\beqn
+\rho_{1,2} := \corr{X_1,\,X_2} := \frac{\sigma_{1,2}}{\sigma_1 \sigma_2} = \frac{\cov{X_1}{X_2}}{\sd{X_1} \sd{X_2}} = \frac{\cov{X_1}{X_2}}{\sqrt{\var{X_1} \var{X_2}}}
+\eeqn
+
+where $\sd{\cdot}$ denotes the standard deviation of a r.v., the square root of its variance. Find $\corr{X_i,\,X_j}$ for two arbitrary elements in the r.v. vector $\X \sim \multinomial{n}{\p}$. }\spc{3}
+
+
+
+\easysubproblem{If $\c = \bracks{1 ~2 ~3 ~4}^\top$, compute the inner product $\c^\top \c$ and the outer product $\c \c^\top$.}\spc{10}
+
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+\problem{These exercises give you practice with sums and indicator functions.}
+
+\begin{enumerate}
+
+\easysubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} \indic{x = 17}$.}\spc{0.5}
+
+\easysubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} c \indic{x = 17}$ where $c \in \reals$ is a constant.}\spc{0.5}
+
+\easysubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} \indic{x \in \braces{1, 2, 3}}$.}\spc{0.5}
+
+\easysubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} x\indic{x \in \braces{1, 2, 3}}$.}\spc{0.5}
+\easysubproblem{Expand and simplify as much as you can: $\sum_{x \in \naturals_0} x^{\indic{x \in \braces{1, 2, 3}}}$.}\spc{0.5}
+
+\easysubproblem{Expand and simplify as much as you can: $\prod_{x \in \reals} \indic{x \in \braces{1, 2, 3}}$.}\spc{0.5}
+
+\easysubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} \indic{x \in \braces{1, 2, 3}}\indic{x \in \braces{4, 5, 6}}$.}\spc{0.5}
+
+
+\intermediatesubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} c \indic{x \in \braces{1, 2, \ldots, t}}$ where $c \in \reals$ is a constant and $t \in \naturals$ is a constant.}\spc{0.5}
+
+\intermediatesubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} t \indic{x \in \braces{1, 2, \ldots, t}}$ where $c \in \reals$ is a constant and $t \in \naturals$ is a constant.}\spc{0.5}
+
+\intermediatesubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} x \indic{x \in \braces{1, 2, \ldots, t}}$ where $c \in \reals$ is a constant and $t \in \naturals$ is a constant.}\spc{0.5}
+
+\intermediatesubproblem{Expand and simplify as much as you can: $\sum_{x \in \reals} \oneover{x!} \indic{x \in \naturals}$.}\spc{0.5}
+
+\intermediatesubproblem{Prove $\expe{\indic{X \in A}} = \prob{X \in A}$.}\spc{2}
+
+
+\end{enumerate}
+
+\problem{These exercises review convolutions.}
+
+
+\begin{enumerate}
+
+\easysubproblem{Is a JMF a type of PMF or PMF a type of JMF? Explain.}\spc{2}
+
+\easysubproblem{Let $X_1, X_2 \iid \bernoulli{p}$. Find the PMF of the sum of $T = X_1 + X_2$ using the appropriate discrete convolution formula that would make the problem easiest.}\spc{4}
+
+\easysubproblem{Let $X_1 \sim \bernoulli{p_1}$ independent of $X_2 \sim \bernoulli{p_2}$. Find the JMF of for $X_1, X_2$. Denote it using a 2 $\times$ 2 grid or the piecewise function notation.}\spc{6}
+
+\easysubproblem{Use the JMF of for $X_1, X_2$ to find the PMF for $T = X_1 + X_2$. Denote it using the piecewise function notation.}\spc{3}
+
+\intermediatesubproblem{Prove the PMF of $T = X_1 + X_2$ using the appropriate discrete convolution formula . Show that the function reduces to the piecewise function in (c) when substituting for the values of $t$. }\spc{6}
+
+
+\hardsubproblem{Let 
+
+\beqn
+X_1 \sim \begin{cases}
+3 \withprob 0.3 \\
+6 \withprob 0.7
+\end{cases} \quad \text{independent of} \quad
+%
+X_2 \sim \begin{cases}
+4 \withprob 0.4 \\
+8 \withprob 0.6
+\end{cases} 
+\eeqn
+
+Find the PMF of $T = X_1 + X_2$ using a convolution. Denote it using the piecewise function notation.}\spc{8}
+
+
+\hardsubproblem{Prove the PMF of a binomial inductively using convolutions on the sequence of r.v.'s $\Xoneton \iid \bernoulli{p}$. You will need to use Pascal's Triangle combinatorial identity we employed in class.}\spc{9}
+
+
+\hardsubproblem{[MA] Prove the PMF of a negative binomial inductively using convolutions on the sequence of r.v.'s $\Xoneton \iid \geometric{p}$. You will need to use the \href{https://en.wikipedia.org/wiki/Hockey-stick_identity}{hockey stick identity}.}\spc{9}
+
+\hardsubproblem{Let $X_1 \sim \binomial{n_1}{p}$ independent of $X_2 \sim \binomial{n_2}{p}$. Find the PMF of the sum of $T = X_1 + X_2$ using a convolution.}\spc{13}
+
+
+\easysubproblem{Prove the PMF of $X \sim \poisson{\lambda}$ using the limit as $n \rightarrow \infty$ and let $p = \overn{\lambda}$.}\spc{9}
+
+
+\hardsubproblem{Let $X_1 \sim \poisson{\lambda_1}$ independent of $X_2 \sim \poisson{\lambda_2}$. Find the PMF of the sum of $T = X_1 + X_2$ using a convolution.}\spc{8}
+
+
+
+\end{enumerate}
+
+
+\problem{These exercises introduce probabilities of conditional subsets of the supports of multiple r.v.'s.}
+
+
+\begin{enumerate}
+
+\hardsubproblem{Let $X \sim \geometric{p_x}$ independent of $Y \sim \geometric{p_y}$. Find $\prob{X > Y}$ using the method we did in class.}\spc{10}
+
+
+\easysubproblem{[MA] Prove this a different way by finding $\prob{X = Y}$ and then using the law of total probability.}\spc{10}
+
+\easysubproblem{[MA] As both $p_x$ and $p_y$ are reduced to zero, but $r = \frac{p_x}{p_y}$, what is the asymptotic probability you found in (a)?}\spc{10}
+
+\hardsubproblem{Let $X \sim \poisson{\lambda}$ independent of $Y \sim \poisson{\lambda}$. Find an expression for $\prob{X > Y}$ \emph{as best as you are able to answer}. Part of this exercise is identifying where you cannot go any further.}\spc{9}
+
+
+\end{enumerate}
+
+
+\problem{These exercises will introduce the Multinomial distribution.}
+
+
+\begin{enumerate}
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$ where $\dime{\X} = k$, what is the parameter space for both $n$ and $\p$?}\spc{2}
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$ where $\dime{\X} = k$, what is the $\support{\X}$?}\spc{2}
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$ where $\dime{\X} = k$, what is $\dime{\p}$?}\spc{-0.5}
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$ where $\dime{\X} = 2$, express $p_2$ as a function of $p_1$.}\spc{2}
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$ where $\dime{\X} = 2$, how are both $X_1$ and $X_2$ distributed?}\spc{1}
+
+\easysubproblem{If $\X \sim \multinomial{n}{\p}$ and $n= 10$ and $\dime{\X} = 7$ as a column vector, give an example value of $\x$, a realization of the r.v. $\X$.}\spc{2}
+
+\easysubproblem{If $\X \sim \multinomial{9}{\bracks{0.1~0.2~0.7}^\top}$, find $\prob{\X = \bracks{3~2~4}^\top}$ to the nearest two significant digits.}\spc{2}
+
+
+%\intermediatesubproblem{If $\X \sim \multinomial{n}{\p}$ and $n= 10$ and $\p = \bracks{0.2, 0.8}^\top$, find $\muvec := \expe{\X}$.}\spc{2}
+
+
+\hardsubproblem{[MA] If $\X_1 \sim \multinomial{n}{\p}$ and independently $\X_2 \sim \multinomial{n}{\p}$ where $\dime{\X_1} = \dime{\X_2} = k$. Find the JMF of $\T_2 = \X_1 + \X_2$ from the definition of convolution. This looks harder than it is! First, use the definition of convolution and factor out the terms that are not a function of $x_1, \ldots, x_K$. Finally, use Theorem 1 in \href{http://www.lrecits.usthb.dz/1.3.pdf}{this paper} for the summation.}\spc{9}
+
+\end{enumerate}
+
+
+\end{document}
+
