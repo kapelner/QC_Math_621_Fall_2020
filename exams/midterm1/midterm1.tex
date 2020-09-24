@@ -1,0 +1,277 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a string (e.g. \texttt{aebgd}) where the order of the letters does not matter nor does upper / lowercase. \normalsize}
+
+\title{Math 368 / 621 Fall \the\year{} \\ Midterm Examination One}
+\author{Professor Adam Kapelner}
+
+\date{Wednesday, September 22, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is 75 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+
+
+\problem\timedsection{7} These are questions about indicator functions.
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+%\setcounter{enumi}{3}
+\item $\sum_{x \in \reals} \indic{x \in \braces{17}} = 17$
+\item $\sum_{x \in \reals} \indic{x \in \braces{17}} = 1$
+\item $\prod_{x \in \reals} \indic{x \in \braces{17}} = 17$
+\item $\prod_{x \in \reals} \indic{x \in \braces{17}} = 1$
+\item $\sum_{x \in \reals} h(x) \indic{x \in \naturals} = \sum_{x \in \naturals} h(x)$ where $h$ is a function. \\
+
+Let $X$ be a discrete rv with PMF $p(x)$, old-style PMF $p^{old}(x)$ and support $\support{X}$. For any $X$,
+\item $\sum_{x \in \reals} \indic{x \in \support{X}} = 1$
+
+\item $\sum_{x \in \reals} p^{old}(x) = 1$
+\item $\sum_{x \in \support{X}} p^{old}(x) = 1$
+\item $\sum_{x \in \reals} p^{old}(x) \indic{x \in \support{X}} = 1$
+
+\item $\sum_{x \in \reals} p(x) = 1$
+\item $\sum_{x \in \reals} p(x) \indic{x \in \support{X}} = 1$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{8} Let 
+
+\beqn
+\X = \twovec{X_1}{X_2} \sim p_{\X}(\x), ~~ T := X_1 + X_2 \sim p_{T}(t),  ~~
+X_1 \sim p_{X_1}(x) := \begin{cases}
+5 \withprob 0.2 \\
+10 \withprob 0.8
+\end{cases}  \text{independent of} ~~
+%
+X_2 \sim p_{X_2}(x) :=\begin{cases}
+-5 \withprob 0.1 \\
+-10 \withprob 0.9
+\end{cases}
+\eeqn
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{8} 
+
+\begin{enumerate}[(a)]
+%\setcounter{enumi}{3}
+\item $X_1, X_2$ are identically distributed
+\item $\var{\X} = \var{T}$
+\item $T = \a \X$ where $\a = [1~1]$
+\item $p_{T}(t) = p_{X_1}(x) \star p_{X_2}(x)$
+\item $p_{T}(t) = \sum_{x_1 \in \reals} \sum_{x_2 \in \reals} p_{\X}(x_1, x_2)$
+\item $p_{T}(t) = \sum_{x_1 \in \reals} \sum_{x_2 \in \reals} p_{\X}(x_1, x_2) \indic{t = x_1 + x_2}$
+\item $p_{T}(t) = \sum_{x_1 \in \reals} \sum_{x_2 \in \reals} p_{X_1}(x_1)p_{X_2}(x_2) \indic{t = x_1 + x_2}$
+%\item $p_{T}(t) = \sum_{x \in \reals}  p_{\X}(x, t - x)$
+\item $p_{T}(t) = \sum_{x \in \reals}  p_{X_1}(x)p_{X_2}(t - x)$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{10} Consider the same setup as the previous problem: 
+\beqn
+\X = \twovec{X_1}{X_2} \sim p_{\X}(\x), ~~ T := X_1 + X_2 \sim p_{T}(t),  ~~
+X_1 \sim p_{X_1}(x) := \begin{cases}
+5 \withprob 0.2 \\
+10 \withprob 0.8
+\end{cases}  \text{independent of} ~~
+%
+X_2 \sim p_{X_2}(x) :=\begin{cases}
+-5 \withprob 0.1 \\
+-10 \withprob 0.9
+\end{cases}
+\eeqn
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} 
+
+\begin{enumerate}[(a)]
+%\setcounter{enumi}{3}
+\item $T \sim \text{Deg}(0)$
+\item $T \sim \binomial{2}{p}$ where $p$ can be computed from $p_{X_1}(x)$ and $p_{X_2}(x)$
+\item $\support{T} = \braces{-10, -5, 5, 10}$
+\item $p_{X_1}(x) = 0.2 \indic{x = 5} + 0.8 \indic{x = 10}$
+\item $p_{X_1}(x) = 5 \indic{x = 0.2} + 10 \indic{x = 0.8}$
+\item $p_{T}(t) = 0.2 \indic{t = 5} + 0.8 \indic{t = 10} + 0.1 \indic{t = -5} + 0.9 \indic{t = -10}$
+\item $p_{T}(0) = p_{\X}(0, 0)$
+\item $p_{T}(0) = p_{\X}(5, -5) + p_{\X}(10, -10)$
+\item $p_{T}(0) = p_{X_1}(5) + p_{X_2}(-5) + p_{X_1}(10) + p_{X_2}(-10)$
+\item $p_{T}(0) = 0.74$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problem\timedsection{8} These are questions about rv's we studied in class. Consider $X_1, X_2, X_3, \ldots \iid \bernoulli{p}$.
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{9} 
+
+\begin{enumerate}[(a)]
+%\setcounter{enumi}{3}
+\item $X_1 + X_{17} \sim \binomial{17}{p}$
+\item $X_1 + X_{17} \sim \binomial{2}{p}$
+\item $X_1 + X_2 + X_3 + \ldots$ is a geometric rv
+\item $X_1 + X_2 + X_3 + \ldots$ is a negative binomial rv
+\item $\bracks{X_1~ X_2~ X_3}^\top$ is a multinomial rv\\
+
+Let $T_n := \sum_{i=1}^n X_i$ where $n \in \naturals$
+
+\item $T_n \sim \binomial{n}{p}$
+%\item $T_n + T_n \sim \binomial{2n}{p}$
+\item $T_n$ will be approximately distributed as a Poisson($np$) rv if $n$ is large and $p$ is small.\\
+
+Let $Y$ be the rv that counts the number of $X_t$'s that are realized to be zero before the first $X_t$ that is realized to be one i.e. $Y = \min{t\,:\, X_t = 1} - 1$. 
+\item $Y$ is a geometric rv
+\item Given that $Y = 4$, then $X_3$ is degenerate.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%\beqn
+%\lim_{\sigma \rightarrow 0} POW(\theta_0, \theta_a, n, \sigma, \alpha) = \lim_{\sigma \rightarrow 0} \parens{1 - \Phi\parens{-\frac{\sqrt{n}}{\sigma} (\theta_a - \theta_0) + z_{1 - \alpha}}} = 1 - \lim_{\sigma \rightarrow 0} \parens{\Phi\parens{-\frac{\sqrt{n}}{\sigma} (\theta_a - \theta_0) + z_{1 - \alpha}}} = 1 - 0 = 1
+%\eeqn
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{7} Consider $X_1, X_2, X_3, \ldots \iid \geometric{p}$. Let $T_n := \sum_{i=1}^n X_i$ and $T_m := \sum_{i=n+1}^{n+1+m} X_i$ where $n, m \in \naturals$.
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{7} 
+
+\begin{enumerate}[(a)]
+\item $\support{X_1} = \support{X_1 + X_2}$
+\item $T_n \sim p_{T_n}(t) = p^2 \sum_{x=0}^\infty (1-p)^x (1-p)^{t-x} \indic{t-x \in \braces{0,1,2,\ldots}}$
+\item $T_n \sim p_{T_n}(t) = p^2 \sum_{x=1}^\infty (1-p)^x (1-p)^{t-x} \indic{t-x \in \braces{1,2,\ldots}}$
+\item $T_n + T_n \sim \negbin{2n}{p}$
+\item $T_m \sim \negbin{m}{p}$
+\item $T_m \sim \negbin{n+m}{p}$
+\item $T_n + T_m \sim \negbin{n+m}{p}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{6} Let $X_1, X_2, \ldots, X_n \iid \poisson{\lambda}$, $T_n := \sum_{i=1}^n X_i$ and $\X = \bracks{X_1 ~ X_2 ~ \ldots~ X_n}^\top \sim p_{\X}$.
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{9} 
+
+\begin{enumerate}[(a)]
+\item $p_{X_1}(x) = \frac{\lambda^x e^{-\lambda}}{x!}$
+\item $p_{X_1}(x) = \frac{\lambda^x e^{-\lambda}}{x!} \indic{x \in \braces{1,2, ...}}$
+\item $p_{X_1}(x) = \frac{\lambda^x e^{-\lambda}}{x!} \indic{x \in \braces{0,1,2, ...}}$
+\item $p_{\X}(\x) = \displaystyle\prod_{i=1}^n \displaystyle\frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \indic{x_i \in \braces{0,1,2, ...}}$
+\item $T_n \sim \poisson{n\lambda}$
+\item $T_n \sim \poisson{\lambda / n}$
+\item $T_n \sim \poisson{\lambda}$
+\item As $n \rightarrow \infty$, $T_n$ becomes more and more degenerate
+\item As $n \rightarrow \infty$, $T_n$ becomes more and more like a $\binomial{n}{\lambda / n}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{10} Consider a bag of marbles with 5 red marbles, 4 green marbles, 6 blue marbles and 3 purple marbles. You sample (pick) 19 marbles from the bag by picking one at a time, recording its color and then putting that marble bag into the bag. Let $X_1$ count the number of red marbles in your sample, let $X_2$ sample the number of green marbles in your sample, let $X_3$ sample the number of blue marbles in your sample and let $X_4$ count the number of purple marbles in your sample. Let $\X = \bracks{X_1 ~ X_2 ~ X_3~ X_4}^\top \sim p_{\X}$.
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item $p_{\X}(\x) = p_{X_1}(x_1) p_{X_2}(x_2) p_{X_3}(x_3) p_{X_4}(x_4)$
+\item $X_1$ is a binomial rv with $n = 19$
+\item $X_1 + X_2 + X_3 + X_4$ is degenerate
+\item $\X \sim \multinomial{4}{18}{\oneover{19}\bracks{5 ~4 ~6 ~3}^\top }$
+\item $\X \sim \multinomial{4}{19}{\oneover{18}\bracks{5 ~4 ~6 ~3}^\top }$
+\item $\X \sim \multinomial{18}{19}{\oneover{4}\bracks{5 ~4 ~6 ~3}^\top }$
+\item $p_{\X}(9,2,2,6) = \oneover{18^4}\binom{19}{9,2,2,5} 5^6 4^2 6^2 3^2$
+\item $p_{\X}(9,2,2,0) = \oneover{18^4}\binom{19}{9,2,2} 5^6 4^2 6^2$
+\item $p_{\X}(9,2,0,0) = \oneover{18^4} \frac{19!}{2!} 5^6 4^2 $
+\item $p_{\X}(19,0,0,0) = \oneover{18^4} \frac{19!}{19!} 5^{19}$
+\item Given $X_1 = 3$ and $X_2 = 1$, $\bracks{X_3~X_4}^\top$ is a multinomial rv with $K=2$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{8} Consider the same situation as the previous problem: \ingray{a bag of marbles with 5 red marbles, 4 green marbles, 6 blue marbles and 3 purple marbles. You sample (pick) 19 marbles from the bag by picking one at a time, recording its color and then putting that marble bag into the bag. Let $X_1$ count the number of red marbles in your sample, let $X_2$ sample the number of green marbles in your sample, let $X_3$ sample the number of blue marbles in your sample and let $X_4$ count the number of purple marbles in your sample.} Thus, $\X = \bracks{X_1 ~ X_2 ~ X_3~ X_4}^\top \sim p_{\X} = \multinomial{4}{19}{\oneover{18}\bracks{5 ~4 ~6 ~3}^\top}$.
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{8} 
+
+\begin{enumerate}[(a)]
+\item $\expe{X_1} = 5/19$
+\item $\expe{X_1} = 19 \times 5/18  $
+\item $\expe{X_2 + X_3} = 19 \times 5/18 + 19 \times 4/18 $
+\item $\expe{X_2 + X_3} = 19 \times 6/18  + 19 \times 4/18  $ \\
+
+Let $\c = [1 ~ 2 ~ 3 ~ 4]^\top$ i.e. a 4-dimensional column vector of constants.
+
+\item $\expe{\c + \X} = \frac{19}{18}\bracks{1 \times 5 ~~~ 2 \times 4 ~~~ 3 \times 6 ~~~ 4 \times 3}^\top$
+\item $\expe{\c + \X} = \frac{19}{18}(1 \times 5 + 2 \times 4 + 3 \times 6 + 4 \times 3)$
+
+\item $\expe{\c^\top \X} = \frac{19}{18}\bracks{1 \times 5 ~~~ 2 \times 4 ~~~ 3 \times 6 ~~~ 4 \times 3}^\top$
+\item $\expe{\c^\top \X} = \frac{19}{18}(1 \times 5 + 2 \times 4 + 3 \times 6 + 4 \times 3)$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{11} Consider the same situation as the previous two problems: \ingray{a bag of marbles with 5 red marbles, 4 green marbles, 6 blue marbles and 3 purple marbles. You sample (pick) 19 marbles from the bag by picking one at a time, recording its color and then putting that marble bag into the bag. Let $X_1$ count the number of red marbles in your sample, let $X_2$ sample the number of green marbles in your sample, let $X_3$ sample the number of blue marbles in your sample and let $X_4$ count the number of purple marbles in your sample. Thus, $\X = \bracks{X_1 ~ X_2 ~ X_3~ X_4}^\top \sim p_{\X} = \multinomial{4}{19}{\oneover{18}\bracks{5 ~4 ~6 ~3}^\top}$.}
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item $\var{\X}$ is a symmetric and diagonal matrix
+\item $\cov{X_1}{X_2 + X_3} = 2\cov{X_1}{X_2}$
+\item $\cov{X_1}{X_2 + X_3} = -19 (50) / 18^2$
+\item $\var{[1~1~1~1] \X} = 0$
+\item $\var{[1~1~1~1] \X} = [1~1~1~1] \var{\X} [1~1~1~1]^\top$
+\item $\var{\X} = \displaystyle\frac{19}{18^2}\bracks{\begin{array}{cccc} 
+a & e & f & g \\
+e & b & h & i \\
+f & h & c & j \\
+g & i & j & d
+\end{array}}$ where $a, b, c, d, e, f, g, h, i, j$ are integers.
+\item $\var{\X}$ is the matrix in the previous question and $e, f, g, h, i, j$ are negative integers.
+\item $\var{\X}$ is the matrix in the previous question and $g = -15$.
+\item $\var{\X}$ is the matrix in the previous question and $b = -60$.
+\item The number of red marbles minus the number of purple marbles has variance $\frac{19}{18^2}(5 \times 14 + 2 (5 \times 3) + 3 \times 16)$
+\item The number of red marbles minus the number of purple marbles has variance $\frac{19}{18^2}(5 \times 14 - 2 (5 \times 3) + 3 \times 16)$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

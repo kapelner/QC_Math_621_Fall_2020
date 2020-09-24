@@ -45,13 +45,13 @@ My lecture videos can be watched on slack and lecture notes are also scanned in 
 * Homework 4 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw04/hw04.pdf) (due 11/1)
 * Homework 3 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw03/hw03.pdf) (due 10/4)-->
 * Homework 2 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw02/hw02.pdf) (due 9/22)
-* Homework 1 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw01/hw01.pdf) (due 9/10)
+* Homework 1 [(download)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/homeworks/hw01/hw01.pdf) (due 9/12)
 * Homework 0 [(syllabus, page 6)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/syllabus/syllabus.pdf?raw=true) (due 8/28)
 
 
 ## Exams
 
-* Midterm I, September 23 (on zoom during regular class) 
+* Midterm I, September 23 (on zoom during regular class) [(exam)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm1/midterm1_solutions.pdf) 
 * Midterm II, November 4 (on zoom time TBD) 
 * Final, December 14 1:45-3:45PM (on zoom? time TBD)
 
