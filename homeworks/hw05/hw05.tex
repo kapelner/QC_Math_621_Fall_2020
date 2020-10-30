@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 368/621 Fall \the\year{} Homework \#5 [INCOMPLETE]}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due by email ?? ??, Nov ??, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, review from math 241 about conditional probability, expectation and variance then read on your own about PMF transformations, the family of gamma functions, the negative binomial, poisson, exponential, Erlang, uniform rv's and the Poisson process.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 7 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+\noindent NAME: \line(1,0){240} ~SECTION: \line(1,0){30} ~CLASS: 368 | 621
+\clearpage
+}
+
+
+\problem{According to the \href{http://www.pewforum.org/2015/05/12/chapter-3-demographic-profiles-of-religious-groups/}{Pew Research Center's demographic survey of Americans}, \qu{religious} people have more children than \qu{non-religious} people. As an example, Mormons have on average 3.4 children and others have on average 2.1 children. We will model both groups' number of children as Poisson rv'ss where $N_M$ denotes the model for Mormons and $N_O$ denotes the model for Atheists:
+
+\beqn
+N_M &\sim& \poisson{3.4} \\
+N_O &\sim& \poisson{2.1}
+\eeqn}
+
+\begin{enumerate}
+
+
+\hardsubproblem{[MA] Comment on the appropriateness of the Poisson model here.}\spc{1}
+
+\intermediatesubproblem{If we are to only Mormons vs everyone else, there about 7M Mormons in the American population which is about 330 million. Create a r.v. $X$ which represents sampling one American at random and is equal to 1 if Mormon and 0 and otherwise find its PMF.}\spc{1}
+
+\intermediatesubproblem{If you call $Y$ the number of children someone has, draw the two-stage tree (like in class) and then find the distribution of $Y$ where atheist/Mormon status is unknown. }\spc{9}
+
+\easysubproblem{Can $Y$ be called a mixture distribution or compound distribution?}\spc{0}
+
+
+\hardsubproblem{If somone has 5 kids, what is the probability they are Mormon according to our model?}\spc{7}
+
+\end{enumerate}
+
+\problem{We will now practice multilevel models, mixture distributions and compound distributions. }
+
+\begin{enumerate}
+\intermediatesubproblem{Show that if $Y~|X=x \sim \poisson{x}$ and $X \sim \text{Gamma}(\alpha, \beta)$ then $Y \sim \text{ExtNegBinomial}\parens{\alpha, \frac{\beta}{1 + \beta}}$. Copy from what we did in class first. This fill in the left-out step. Hint: find the kernel of the $\text{ExtNegBinomial}\parens{\alpha, \frac{\beta}{1 + \beta}}$ before you begin.}\spc{13}
+
+
+\intermediatesubproblem{Show that if $Y~|X=x \sim \exponential{x}$ and $X \sim \text{Gamma}(\alpha, \beta)$ then $Y \sim \text{Lomax}(\alpha, \beta)$. You will need to look up the Lomax distribution on wikipedia.}\spc{7}
+
+\intermediatesubproblem{Draw a tree of the folowing multilevel hierarchical model. 
+
+\beqn
+X_1 &\sim& \gammadist{\alpha_1}{\beta_1} ~~\text{independent of}\\
+X_2 &\sim& \gammadist{\alpha_2}{\beta_2} \\
+Y~|~X_1=x_1,~X_2=x_2 &\sim& \betanot{x_1}{x_2}
+\eeqn}\spc{3}
+
+\hardsubproblem{[MA] Get as far as you can when finding the PDF of the compound distribution $Y$.}
+
+%
+%\easysubproblem{Can this be considered an \qu{overdispersed} beta? Yes/no.}\spc{0}
+%
+%
+%\easysubproblem{Why does mixing / compounding give more \qu{degrees of freedom} to the model of the phenomenom you care about (denoted $Y$ in class and above). Discuss what this means and how it may be useful in the real world.}\spc{10}
+
+
+\end{enumerate}
+
+
+
+\end{document}
