@@ -1,0 +1,259 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 368 / 621 Fall \the\year{} \\ Midterm Examination Two}
+\author{Professor Adam Kapelner}
+
+\date{Wednesday, November 4, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is 75 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+\problem\timedsection{4} Let $Y_1, ..., Y_n \iid \poisson{\lambda_Y}$ be the discrete rv that models the number of runs the Yankees score in $n$ individual games and $M_1, ..., M_n \iid \poisson{\lambda_M}$ be the discrete rv that models the number of runs the Mets score in $n$ individual games. Let the difference in scores for any game $i$ be $D_i := Y_i - M_i$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{5} 
+
+\begin{enumerate}[(a)]
+\item Any $D_i$ follows a Skellam distribution without additional assumption(s). \\
+
+If you marked (a) false, for the rest of this problem assume the assumption(s) needed so that $D_i$ is Skellam.
+
+\item $D_i \sim \text{Skellam}(Y, M)$
+\item $D_1, ..., D_n$ are $\iid$
+\item $D_1 + \ldots + D_n$ follows a Skellam distribution
+\item $M_i - M_j$ where $i \neq j$ follows a Skellam distribution.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{7} Let $X \sim U(\braces{1,4,9,16,25,36})$ and $Y = \sqrt{X}$ and $Z$ = mod$(X, 2)$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{8} 
+
+\begin{enumerate}[(a)]
+\item $X$ is a discrete rv
+\item $Y$ is a continuous rv
+\item $p_Y(y) = p_X(y^2)$
+\item $p^{old}_Y(y) = 1/6$
+\item $\exists h$ such that $p_Z(z) = p_X(h(z))$
+\item $Z$ is a Bernoulli rv
+\item $p^{old}_Z(z) = 1/2$
+\item The rv's $Y$ and $Z$ are independent.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\problem\timedsection{11} Let $X \sim \text{Gamma}(\alpha, \beta) := f_X(x)$ and $Y = 1/X \sim f_Y(y)$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{15} 
+
+\begin{enumerate}[(a)]
+\item $F_X(x) = \int_\reals \frac{\beta^\alpha}{\Gammaf{\alpha}} x^{\alpha - 1} e^{-\beta x}dx$
+\item $F_X(x) = \frac{\beta^\alpha}{\Gammaf{\alpha}}  \int_0^{x} u^{\alpha - 1} e^{-\beta u}du$
+\item $F_X(x) =  \frac{\beta^\alpha}{\Gammaf{\alpha}} \gamma\parens{x, \alpha}$
+\item $F_X(x) =  P(x,\alpha)$
+\item $F_X(x) =  P(\alpha,\beta x)$
+\item $F_Y(y) =  1 - F_x(1/y)$
+\item $F_Y(y) =  F_x(1/y)$
+\item When doing the kernel decompositions $f_X(x) = c_X k_X(x)$ and $f_Y(y) = c_Y k_Y(y)$ we see that $c_X = c_Y$.
+\item When doing the kernel decompositions $f_X(x) = c_X k_X(x)$ and $f_Y(y) = c_Y k_Y(y)$ we see that $k_X(x) = k_Y(y)$.
+\item $XY$ is distributed as a standard uniform.
+\item The support of $Y$ is all real numbers.
+\item $f_Y^{old}(y) = \frac{\Gammaf{\alpha}}{\beta^\alpha} (1/y)^{\alpha + 1} e^{-\beta / y}$.
+\item $f_Y^{old}(y) = \frac{\Gammaf{\alpha}}{\beta^\alpha} (1/y)^{\alpha - 1} e^{-\beta / y}$.
+\item $f_Y^{old}(y) = \frac{\beta^\alpha}{\Gammaf{\alpha}} (1/y)^{\alpha + 1} e^{-\beta / y}$.
+\item $f_Y^{old}(y) = \frac{\beta^\alpha}{\Gammaf{\alpha}} (1/y)^{\alpha - 1} e^{-\beta / y}$.
+
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{10} Let $X_1, X_2, ... \iid \exponential{\lambda}$ and $N \sim \poisson{\lambda}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12} 
+
+\begin{enumerate}[(a)]
+\item $\int_\reals p_N(t) dt = 1$.
+\item $\int_\reals f_{X_1}(t) dt = 1$.
+\item $\int_\reals f_{X_1 + X_2 + \ldots + X_k}(t) dt = 1$ for all $k \in \naturals$.
+\item $X_1$ is distributed as an Erlang rv.
+\item $X_1$ is distributed as a Gamma rv.
+\item $X_1 + X_2 + \ldots $ is distributed as an Erlang rv.
+\item $X_1, X_2, ...$ and $N$ are related by the Poisson Process without further assumptions.\\
+
+If you marked (g) false, for the rest of this problem assume whatever is necessary so that $X_1, X_2, ...$ and $N$ are related by the Poisson Process.
+
+\item $\prob{X_1 + X_2 + \ldots + X_k < t} = P(k, \lambda t)$
+\item $\prob{N < t} = P(k, \lambda t)$ %false
+\item $\prob{X_1 + X_2 + \ldots + X_k \geq 1} = \prob{N < k}$.
+\item $\prob{X_1 + X_2 + \ldots + X_k \leq 1} = \prob{N \geq k}$.
+\item $\prob{X_1 + X_2 + \ldots + X_k \leq 1} + \prob{N < k}$ = 1.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{6} Let $X \sim \text{Logistic}(\mu, \sigma)$ and let $Z = \frac{X - \mu}{\sigma}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{8} 
+
+\begin{enumerate}[(a)]
+\item $f_{X,Z}(x,z) = f_X(x) f_Z(z)$
+\item $Z$ has support of all the real numbers.
+\item $\var{Z} = 1$
+\item $\expe{X} = \sigma$
+\item $X$ could be an \emph{error distribution}
+\item $F_X(1/2) = \mu$
+\item The 50\%ile of $Z$ is $\natlog{1}$
+\item The 90\%ile of $Z$ is $\natlog{9}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{4} Let $X_1, X_2, ..., X_n \iid \text{Laplace}(0, 1)$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{5} 
+
+\begin{enumerate}[(a)]
+\item $f_{X_1, X_2, ..., X_n}(x_1, x_2, \ldots, x_n) = \frac{1}{2^n} e^{-|x_1 + \ldots + x_n|}$
+\item $Q[X_1, q] = 1 - Q[X_1, 1 - q]$
+\item $X_1$ could be an \emph{error distribution}
+\item $X_1 + X_2 + \ldots + X_n$ could be an \emph{error distribution}
+\item $X_1 + X_2 + \ldots + X_n$ is Laplace distributed
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{8} Let $X \sim \text{Weibull}(k, \lambda)$ and $Y = \natlog{X}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{6} 
+
+\begin{enumerate}[(a)]
+\item $X$ could be a memoryless rv.
+\item The kernel of $f_X(x)$ is $k \lambda^k$.
+\item if $k = 1.00001$ then $\cprob{X \geq x + c}{X \geq c} < \prob{X \geq x}$ for all $c > 0$.
+\item Since $X$ is a waiting time / survival distribution, $Y$ is also a waiting time / survival distribution.
+\item $f_Y(y)^{old} = e^{k\lambda (\lambda y)^{k-1} e^{-(\lambda y)^k}}$
+\item $f_Y(y)^{old} = k\lambda^k e^{ky} e^{-\lambda^k e^{ky}}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{11} Let $X_1, X_2, \ldots, X_{17} \iid U(0, 1)$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12} 
+
+\begin{enumerate}[(a)]
+\item $X_1, X_2, \ldots, X_{17}$ are called \qu{order statistics}.
+\item The third largest realization is denoted $x_{(3)}$.
+\item The third largest realization is denoted $X_{(3)}$.
+\item $\support{X_{(k)}} = [0, k)$.
+\item The probability that the third largest is less than 0.3 can be computed via the function $\oneover{B(3, 15)}x^2 (1-x)^{14}$ by plugging in $x=0.3$.
+\item In the density of the rv modeling the maximum of $X_1, X_2, \ldots, X_{17}$, most of the mass is located near zero.
+\item In the density of the rv modeling the maximum of $X_1, X_2, \ldots, X_{17}$, most of the mass is located near 0.5.
+\item In the density of the rv modeling $X_{(9)}$, most of the mass is located near zero.
+\item In the density of the rv modeling $X_{(9)}$, most of the mass is located near 0.5.
+\item If $Y_1 = aX_1, Y_2 = aX_2, \ldots, Y_{17} = aX_{17}$ where $a$ is a positive constant, the density of the minimum of $Y_1, Y_2, \ldots, Y_{17}$ is $\frac{17}{a}\tothepow{\frac{y}{a}}{16}\indic{y \in [0,a]}$.
+\item If $a < 1$, $b > 1$, $c > 2$, then $B(a,b,c) < B(b,c)$.
+\item If $a = 0$, $b > 1$, $c > 2$, then $I_a(b,c) > B(b,c)$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{9} Let $X_1, X_2 \iid \exponential{\lambda}$ and $Y_1 = \natlog{X_1 / X_2}$. And let $\bv{g}$ denote a vector valued function from two input $x$'s to two output $y$'s, $\reals^2 \rightarrow \reals^2$ and $\bv{h}$ denote the multivariate inverse function for $\bv{g}$ which is thus also a vector valued function from two input $y$'s to two output $x$'s, $\reals^2 \rightarrow \reals^2$. Let $g_1(x_1, x_2) = \natlog{x_1 / x_2}$ and $g_2(x_1, x_2) = x_2$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{8} 
+
+\begin{enumerate}[(a)]
+\item $h_1(y_1, y_2) = \natlog{y_1 / y_2}$ and $h_2(y_1, y_2) = y_2$ fits the above definition of $\bv{h}$.
+\item $f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_2 e^{y_1}, y_2) y_2e^{y_1}$ 
+\item $f_{Y_1, Y_2}(y_1, y_2) = f_{X}(y_2 e^{y_1})f_X(y_2) y_2e^{y_1}$ 
+\item $f_{Y_1, Y_2}(y_1, y_2) = \lambda^2 y_2 e^{-\lambda y_2(1+e^{y_1})}$
+\item There is one nuisance dimension in the jdf of $\Y$ when we wish to find the density of $Y_1$. 
+\item $f_{Y_1}(y) = \lambda^2 ye^{-\lambda y} \int_\reals e^{-\lambda y e^{u} } du$ 
+\item $f_{Y_1}(y) = \lambda^2 \int_\reals u e^{-\lambda u(1+e^{y})} du$ 
+\item $Y_1$ will be BetaPrime distributed.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{5} Let $X\,|\,N=n \sim \binomial{n}{1/2} := \binom{n}{x} \oneover{2^n} \indic{x \in \braces{0,1,...,n}}$ and let $n$ be a realization from $N \sim$ ExtNegBin($\alpha, p$).
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{7} 
+
+\begin{enumerate}[(a)]
+\item The rv $X\,|\,N$ is discrete.
+\item The rv $X$ (unconditional on $N$) is discrete.
+\item The rv $X$ is a compound distribution.
+\item The rv $X$ (unconditional on $N$) will have two parameters.
+\item The rv $X$ (unconditional on $N$) will have three parameters.
+\item The old-style PDF or PMF for $X$ (unconditional on $N$) can be expressed $\int_\reals \binom{n}{x} \oneover{2^n}   \frac{\Gammaf{\alpha + n}}{\Gammaf{\alpha} n!} (1-p)^n p^\alpha dn$.
+\item The old-style PDF or PMF for $X$ (unconditional on $N$) can be expressed $\sum_{n=0}^\infty \binom{n}{x} \oneover{2^n} \frac{\Gammaf{\alpha + n}}{\Gammaf{\alpha} n!} (1-p)^n p^\alpha$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
