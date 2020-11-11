@@ -7,12 +7,12 @@
 
 
 
-\title{MATH 368/621 Fall \the\year{} Homework \#5 [INCOMPLETE]}
+\title{MATH 368/621 Fall \the\year{} Homework \#5}
 
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due by email ?? ??, Nov ??, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due by email noon, Friday, Nov 20, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -93,6 +93,113 @@ Y~|~X_1=x_1,~X_2=x_2 &\sim& \betanot{x_1}{x_2}
 
 \end{enumerate}
 
+\problem{Moment generating functions (mgf's) and characteristic functions (ch.f.'s)!}
+
+\begin{enumerate}
+
+\easysubproblem{Find a piecewise function that can compute $i^n$ where $i :=\sqrt{-1}$ and $n \in \naturals$. Hint: use the \qu{mod} function (modulus division) to express the cases (see section B's lecture).}\spc{3}
+
+\easysubproblem{Prove that $\abss{e^{i \theta}} = 1$ for all $\theta$.}\spc{3}
+
+\easysubproblem{Give one example function $f$ where you show conclusively that $f \notin L^1$.}\spc{3}
+
+\easysubproblem{Prove that all PDF's are $\in L^1$.}\spc{3}
+
+\intermediatesubproblem{Given the Fourier inversion theorem, prove that if $\phi_X(t) \in L^1$ then 
+
+\beqn
+f_X(x) = \oneover{2\pi} \int_\reals e^{itx} \phi_X(t) dt.
+\eeqn
+
+Hint: use the work found in \href{https://github.com/kapelner/QC_Math_621_Fall_2017/blob/master/lectures/lec14kap.pdf}{my lecture from 2017}.}\spc{2.5}
+
+\easysubproblem{Find the ch.f. of $X \sim \bernoulli{p}$.}\spc{2.5}
+
+\intermediatesubproblem{Find the ch.f. of $T \sim \binomial{n}{p}$. Hint: use the binomial theorem.}\spc{4}
+
+\easysubproblem{Using ch.f.'s, find $\expe{T}$.}\spc{4}
+
+\intermediatesubproblem{Using ch.f.'s, find $\var{T}$.}\spc{4}
+
+\intermediatesubproblem{Using ch.f.'s, show that if $\Xoneton \iid \bernoulli{p}$, then $T = X_1 + \ldots + X_n \sim \binomial{n}{p}$.}\spc{6}
+
+\easysubproblem{Define the mgf and prove properties 0, 2, 3 and 4 for mgf's. (You cannot prove property 1 without advanced math).}\spc{3}
+
+\end{enumerate}
+
+\problem{The central limit theorem (CLT) and a corollary.}
+
+\begin{enumerate}
+
+\easysubproblem{State the setup / assumptions of the CLT.}\spc{1}
+
+\easysubproblem{Prove the CLT (copy from the notes if you get stuck).}\spc{20}
+
+\hardsubproblem{Let $X_1, X_2, \ldots, X_n \iid$ some distribution with mean $\mu_X$ and variance $\sigsq_X < \infty$ and let $Y_1, Y_2, \ldots, Y_n \iid$ some distribution with mean $\mu_Y$ and variance $\sigsq_Y < \infty$ which are independent of the $X_i$'s. Prove the following central limit theorem corollary:
+
+\beqn
+\frac{(\Xbar - \Ybar) - (\mu_X - \mu_Y)}{\sqrt{\overn{\sigsq_X} + \overn{\sigsq_Y}}} \convd \stdnormnot.
+\eeqn
+
+We need this fact to do two-sample testing in statistics. This looks harder than it is. Trace through the proof in (b), use algebra to simplify expressions and make substitutions in the appropriate places.}\spc{20}
+
+\end{enumerate}
+
+\problem{Introducing the king: the normal distribution $\mathcal{N}$ and his princes/sses: the lognormal distribution Log$\mathcal{N}$, chi-squared distribution $\chi^2_k$, Student's T distribution $T_k$ and Fisher-Snecodor's distribution $F_{k_1,k_2}$.}
+
+\begin{enumerate}
+
+\easysubproblem{Let $X_1 \sim \normnot{\mu_1}{\sigsq_1}$ independent of $X_2 \sim \normnot{\mu_2}{\sigsq_2}$. Prove $X_1 + X_2 \sim  \normnot{\mu_1 + \mu_2}{\sigsq_1 + \sigsq_2}$ using ch.f.'s.}\spc{5}
+
+\extracreditsubproblem{Let $X_1 \sim \normnot{\mu_1}{\sigsq_1}$ independent of $X_2 \sim \normnot{\mu_2}{\sigsq_2}$. Prove $X_1 + X_2 \sim  \normnot{\mu_1 + \mu_2}{\sigsq_1 + \sigsq_2}$ using the definition of convolution on a separate page. This is a lot of boring algebra but it will hone your skills. You can find it in the book or on the Internet (but try not to look at the answer).}\spc{-0.5}
+
+%\intermediatesubproblem{Let $X \sim \normnot{\mu}{\sigsq}$ and $Y=X ~|~X \geq a$. Find $f_Y(y)$.}\spc{6}
+
+\easysubproblem{Let $X \sim \lognormnot{\mu}{\sigsq}$ and $Y=\natlog{X}$. How is $Y$ distributed? Use a heuristic argument. No need to actually change variables.}\spc{1}
+
+
+\intermediatesubproblem{Let $X_1 \sim \lognormnot{\mu_1}{\sigsq_1}$, $X_2 \sim \lognormnot{\mu_2}{\sigsq_2}, \ldots, X_n \sim \lognormnot{\mu_n}{\sigsq_n}$ all independent of each other and $Y=\prod_{i=1}^n X_i$. How is $Y$ distributed? Use a heuristic argument. No need to actually change variables.}\spc{1}
+
+%\intermediatesubproblem{The average return of the S\&P 500 stock index since 1928 is 11.4\% and the standard deviation is 19.7\%. Assume for the purposes of this problem that percentage returns is normally distributed (even though it is not true in practice). If you put \$1,000 into the stock market, what is the probability you have \$5,000 after 10 years? The \texttt{R} function you need is \texttt{plnorm}.}\spc{6}
+
+
+%\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots, k_1, \ldots) \sim \chisq{k}$ where $k_1, \ldots$ represents constants.}\spc{3}
+
+\easysubproblem{Let $X \sim \chisq{k}$, find $\expe{X}$ using the fact that $X = Z_1^2 + Z_2^2 + \ldots + Z_k^2$ where $Z_1,  Z_2, \ldots, Z_k \iid \stdnormnot$.}\spc{3}
+
+\easysubproblem{Let $X \sim \chisq{k} = \gammanot{\overtwo{k}}{\half}$. Find the PDF of $X$ by making the correct substitutions in the gamma PDF and simplifying.}\spc{3}
+
+
+\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, the function $g$ s.t. $g(Z_1,  Z_2, \ldots)  \sim \chisq{k}$ where $k \in \naturals$ is a constant is given below:
+
+\ingreen{
+\beqn
+g(Z_1,  Z_2, \ldots) = Z_1^2 + Z_2^2 + \ldots + Z_k^2 \sim \chisq{k}
+\eeqn}
+
+Following this example, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots) \sim F_{k_1,k_2}$ where $k_1, k_2 \in \naturals$ are constants.}\spc{3}
+
+\easysubproblem{Let $X \sim F_{k_1,k_2}$, find the kernel of $f_X(x)$.}\spc{3}
+
+\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots)  \sim T_{k}$ where $k \in \naturals$ is a constant.}\spc{3}
+
+
+\easysubproblem{Let $X \sim T_k$, find the kernel of $f_X(x)$.}\spc{3}
+
+\extracreditsubproblem{Derive the PDF of the $T_k$ distribution using the ratio formula where you first find the distribution of the denominator explicitly. Do on a separate piece of paper.}\spc{0}
+
+
+\extracreditsubproblem{Show that the PDF of $X \sim T_k$, converges to the PDF of $Z \sim \stdnormnot$ when $k \rightarrow \infty$. Hint: use Stirling's approximation. Do on a separate piece of paper.}\spc{0}
+
+
+\easysubproblem{Let $X \sim \cauchynot{0}{1}$, find the kernel of $f_X(x)$.}\spc{3}
+
+\easysubproblem{Using $Z_1,  Z_2, \ldots \iid \stdnormnot$, find a function $g$ s.t. $g(Z_1,  Z_2, \ldots) \sim \cauchynot{0}{1}$.}\spc{1}
+
+\easysubproblem{Let $X \sim \cauchynot{0}{1}$, prove that $\expe{X}$ does not exist without using its ch.f.}\spc{7}
+
+
+\end{enumerate}
 
 
 \end{document}
