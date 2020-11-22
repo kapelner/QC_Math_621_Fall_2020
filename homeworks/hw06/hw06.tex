@@ -1,0 +1,184 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 368/621 Fall \the\year{} Homework \#6}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due by email 11:59PM, Monday, Nov 30, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read on your own about the sample variance rv, quadratic forms, Cochran's theorem and the multivariate normal.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 7 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+\noindent NAME: \line(1,0){240} ~SECTION: \line(1,0){30} ~CLASS: 368 | 621
+\clearpage
+}
+
+
+
+
+\problem{The $\chi^2$ r.v. within Cochran's Theorem.}
+
+\begin{enumerate}
+
+\easysubproblem{Given $\Xoneton \iid f(\mu,\sigsq)$, a density with finite variance, state the classic estimator $S^2$ (a r.v.) and the estimate (a scalar value) for $\sigsq$, the variance of the $X$'s.}\spc{1}
+
+\hardsubproblem{[MA] Prove $\expe{\cdot} = \sigsq$. The answer is online but try to do it yourself. (This property is called \qu{unbiasedness} in a statistical inference context.}\spc{12}
+
+
+\easysubproblem{Given $\Xoneton \iid f(\mu,\sigsq)$, a density with finite variance, state the classic estimator $S$ (a r.v.) and the estimate (a scalar value) for $\sigma$, the standard error of the $X$'s.}\spc{3}
+
+\extracreditsubproblem{Prove this estimator is \textit{biased} i.e $\expe{\cdot} \neq \sigma$.}\spc{12}
+
+\easysubproblem{State Cochran's Theorem.}\spc{4}
+
+\easysubproblem{Given $\Xoneton \iid \normnot{\mu}{\sigsq}$. Show that $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}} \sim \chisq{n}$.}\spc{3}
+
+\easysubproblem{Let $Z_1 := \frac{X_1 - \mu}{\sigma}, \ldots, Z_n := \frac{X_n - \mu}{\sigma}$. We know that $Z_1, \ldots, Z_n  \iid \stdnormnot$ and let the column vector r.v. $\Z := \bracks{Z_1 ~ \ldots ~ Z_n}^\top$. Express $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}}$ in vector notation using $\Z$.}\spc{1}
+
+\easysubproblem{Express $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}}$ as a quadratic form. What is the matrix that determines this quadratic form?}\spc{1}
+
+
+
+\easysubproblem{What is the rank of the determining matrix?}\spc{1}
+
+\easysubproblem{When computing $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}}$, how many \href{https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)}{independent pieces of information} AKA \qu{degrees of freedom} go into the calculation?}\spc{1}
+
+
+\easysubproblem{Show that $\sum_{i=1}^n \squared{\frac{X_i - \mu}{\sigma}} = \frac{(n-1)S^2}{\sigsq} + \frac{n(\Xbar - \mu)^2}{\sigsq}$.}\spc{4}
+
+
+\easysubproblem{Show that $\frac{n(\Xbar - \mu)^2}{\sigsq} \sim \chisq{1}$.}\spc{4}
+
+%\easysubproblem{Express $\frac{n(\Xbar - \mu)^2}{\sigsq}$ in vector notation.}\spc{4}
+
+\easysubproblem{Express $\frac{n(\Xbar - \mu)^2}{\sigsq}$ as a quadratic form. What is the matrix that determines this quadratic form? Call it $B_2$.}\spc{4}
+
+\easysubproblem{What is the rank of the determining matrix?}\spc{1}
+
+%\easysubproblem{When computing $\frac{n(\Xbar - \mu)^2}{\sigsq}$, how many \href{https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)}{independent pieces of information} go into the calculation?}\spc{1}
+
+\easysubproblem{Express $\frac{(n-1)S^2}{\sigsq}$ in vector notation.}\spc{4}
+
+\intermediatesubproblem{Express $\frac{(n-1)S^2}{\sigsq}$ as a quadratic form. What is the matrix that determines this quadratic form? Call it $B_1$.}\spc{4}
+
+\intermediatesubproblem{What is the rank of the determining matrix?}\spc{1}
+
+\easysubproblem{When computing $\frac{(n-1)S^2}{\sigsq}$, how many \href{https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)}{independent pieces of information} go into the calculation?}\spc{1}
+
+\easysubproblem{What is $B_1 + B_2$?}\spc{0}
+
+
+\easysubproblem{What is rank$(B_1)~+~$rank$(B_2)$?}\spc{0}
+
+\easysubproblem{Are the conditions of Cochran's Theorem satisfied so that we can conclude that $\frac{(n-1)S^2}{\sigsq} \sim \chisq{n-1}$ and that $\frac{(n-1)S^2}{\sigsq}$ is independent of $\frac{n(\Xbar - \mu)^2}{\sigsq}$? Yes or no.}\spc{0}
+
+\extracreditsubproblem{Prove Cochran's Theorem. Do on a separate sheet.}
+
+
+\hardsubproblem{[MA] What is $B_1B_2$? Why do you think this should be?}\spc{3}
+
+\intermediatesubproblem{Using your previous answers, show that $\frac{\Xbar - \mu}{\oversqrtn{S}} \sim T_{n-1}$.}\spc{7}
+
+
+\easysubproblem{Make up a definition of \qu{degrees of freedom} in English.}\spc{1}
+
+\intermediatesubproblem{What is the distribution of $S^2$?}\spc{1}
+
+%\hardsubproblem{[MA] What is $\expe{S}$?}\spc{5}
+%
+%\hardsubproblem{[MA] Create a new estimator $S_0$ that is unbiased for $\sigma$ i.e. ($\expe{S} = \sigma$). Hint: use $S$ but multiply by intelligent constants.}\spc{3}
+
+\end{enumerate}
+
+\problem{More vector r.v. operations.}
+
+\begin{enumerate}
+\intermediatesubproblem{Let $\X$ be a vector r.v. with dimension $n$, $\expe{\X} = \muvec$ and $\var{\X} = \Sigma$. Let $A \in \reals^{m \times n}$ be a matrix of constants. Show that $\expe{A\X} = A\muvec$.}\spc{8}
+
+\intermediatesubproblem{Show that $\var{A\X} = A\Sigma A^\top$.}\spc{8}
+
+
+\end{enumerate}
+
+
+\problem{Some questions about ch.f.'s and the MVN really quickly}
+
+\begin{enumerate}
+
+%\hardsubproblem{Let $X \sim \gammanot{\alpha}{\beta}$. Find $\phi_X(t)$. }\spc{10}
+%
+%\easysubproblem{Let $X \sim \chisq{n}$. Find $\phi_X(t)$. Hint: use (a).}\spc{3}
+
+\easysubproblem{Let $Z_1, \ldots, Z_n  \iid \stdnormnot$ and let the column vector r.v. $\Z := \bracks{Z_1 ~ \ldots ~ Z_n}^\top$. What is the PDF of $\Z$? How is it distributed?}\spc{3}
+
+\intermediatesubproblem{Find $\phi_{\Z}(\t)$. Remember $\t$ is a column vector of dimension $n$.}\spc{7}
+
+
+\easysubproblem{Let $A \in \reals^{n \times n}$ be an invertible matrix of constants and $\muvec \in \reals^n$ be a vector of constants. What is the PDF of $\X = A\Z + \muvec$? It should be a function of $n, \x, \muvec, A$ and fundamental constants only.}\spc{3}
+
+\hardsubproblem{[MA] Prove this PDF by using change of variables.}\spc{3}
+
+
+\easysubproblem{Let $A \in \reals^{m \times n}$ be a non-square matrix of constants and $\muvec \in \reals^n$ be a vector of constants. What is the PDF of $\X = A\Z + \muvec$? It should be a function of $n, \x, \muvec, A$ and fundamental constants only.}\spc{3}
+
+\hardsubproblem{[MA] Prove this PDF. You cannot use change of variables since $\X = g(\Z)$ is not invertible. You will have to use another method.}\spc{7}
+
+\intermediatesubproblem{Let $A \in \reals^{m \times n}$ be a non-square matrix of constants and $\muvec \in \reals^n$ be a vector of constants. What is the ch.f. of $\X = A\Z + \muvec$? It should be a function of $n, \t, \muvec, A$ and fundamental constants only. Use property 2 of multivariate ch.f.'s.}\spc{3}
+
+
+\hardsubproblem{Show that $\parens{\X - \muvec}^\top \Sigma^{-1} \parens{\X - \muvec} \sim \chisq{n}$. This amounts to repeating a proof from class.}\spc{8}
+
+
+\intermediatesubproblem{Let $\X \sim \multnormnot{n}{\muvec}{\Sigma}$. Let $B \in \reals^{m \times n}$ be a matrix of constants and $\bv{c} \in \reals^m$ be a vector of constants. Find the distribution of $\Y = B\X + \c$.}\spc{6}
+
+\intermediatesubproblem{[MA] Let $\X_1, \ldots, \X_n \iid \multnormnot{n}{\muvec}{\Sigma}$. Using properties 2 and 3 of ch.f.'s, find the distribution of the average $ \bar{\X} = \overn{1}\parens{\X_1 + \ldots + \X_n}$.}\spc{5}
+
+\hardsubproblem{[MA] Let $\X \sim \multnormnot{n}{\muvec}{\Sigma}$ where $n > 5$. Find the distribution of the first five components, $\bv{U} = \bracks{X_1~X_2~X_3~X_4~X_5}^\top$.}\spc{6}
+
+
+%\hardsubproblem{Use the ch.f. of the MVN to prove that $\bar{\bv{X}} \sim \multnormnot{n}{\muvec_{\xbar}}{\Sigma_{\xbar}}$ and substitute in the mean vector and variance covariance matrix answers for (b) and (c).}\spc{8}
+%
+%
+%\intermediatesubproblem{The parameter space for the multivatiate normal distribution is $\muvec \in \reals^n$ but what is the valid space for $\Sigma$? You can get this from wikipedia. Make sure you explain the answer.}\spc{8}
+
+\end{enumerate}
+
+%\problem{A job interview question...}
+%
+%\begin{enumerate}
+%
+%\extracreditsubproblem{Consider a circle. Place 3 points inside the circle at random. Connect the three points by lines to form a triangle. What is the probability the triangle contains the center of the circle? Have fun...}\spc{5}
+%
+%\end{enumerate}
+
+
+\end{document}
