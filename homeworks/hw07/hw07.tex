@@ -24,7 +24,7 @@
 \begin{abstract}
 The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
 
-Reading is still \textit{required}. For this homework set, read on your own about Markov's, Chebyshev's, Chernoff's, Cauchy-Schwart'z inequalities, law of iterated expectation and convergence in distribution and probability.
+Reading is still \textit{required}. For this homework set, read on your own about Markov's, Chebyshev's, Chernoff's, Cauchy-Schwart'z inequalities, law of iterated expectation and convergence in distribution to a rv or constant, convergence in probability to a constant, convergence in law to a constant, law of iterated expectation and law of total variance.
 
 The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
 
@@ -42,7 +42,119 @@ The document is available with spaces for you to write your answers. If not usin
 \clearpage
 }
 
+\problem{Probability Bounding Inequalities}
 
+\begin{enumerate}
+
+\easysubproblem{Prove Markov's Inequality for a positive r.v. $X$.}\spc{5}
+
+\easysubproblem{Prove a Markov's-like Inequality for a negative r.v. $X$.}\spc{5}
+
+
+\intermediatesubproblem{Prove that if $\expe{\abss{X}}$ is finite then $\expe{X}$ is finite.}\spc{3}
+
+
+\intermediatesubproblem{[MA] Prove that if $\expe{X}$ is finite then $\expe{\abss{X}}$ is finite.}\spc{8}
+
+
+\easysubproblem{Prove Markov's Inequality for any r.v. $X$ with a finite expectation. You need to quote the lemma in (d).}\spc{3}
+
+
+\intermediatesubproblem{Find an upper bound for the last quartile (i.e. the 75\%ile) of a positive r.v. $X$ as a function of its mean.}\spc{5}
+
+
+
+\easysubproblem{Prove Chebyshev's Inequality for any r.v. $X$ with a finite variance.}\spc{2}
+
+
+
+\hardsubproblem{Let $X_n \sim \exponential{n}$. State the Markov, Chebyshev and Chernoff bounds. How fast do each go to zero? Compute upper bounds for $\prob{X \geq 3}$ for Markov, Chebyshev and Chernoff. You can find the MGF for the exponential rv online (no need to prove it here).}\spc{20}
+
+
+\end{enumerate}
+
+\problem{These questions are about other inequalities}
+
+\begin{enumerate}
+\easysubproblem{Reprove the Cauchy-Schwartz inequality for the expectation of the product of two positive r.v.'s $X$ and $Y$.}\spc{9}
+
+\intermediatesubproblem{If $Y = aX + c$ where $X,Y$ are r.v.'s and $a,c$ are positive constants, show $\corrtwo{X}{Y} = 1$.}\spc{2}
+
+\easysubproblem{Prove a Jensens-like inequality for all \emph{concave} functions $h$ for all discrete r.v.'s $X$ with finite support. Concave functions are the same as convex except $g(\sum w_i x_i) \geq \sum w_i g(x_i)$ not less than or equal to.}\spc{8}
+
+\intermediatesubproblem{Consider a non-negative r.v. $X$. Prove that $\sqrt{\expe{X}} \geq \expe{\sqrt{X}}$.}\spc{2}
+
+\hardsubproblem{If $X \sim \binomial{n_1}{p}$ and $Y \sim \binomial{n_2}{p}$ not necessarily independent of each other, show that $\expe{XY} \leq p\sqrt{n_1 n_2 (n_1 p + 1 - p)(n_2 p + 1 - p)}$.}~\spc{8}
+\end{enumerate}
+
+
+\problem{Convergence in distribution, probability and law.}
+
+\begin{enumerate}
+\easysubproblem{Provide the definitions of $X_n \convd c$, $X_n \convp c$ and $X_n \convLp{r} c$ below.}\spc{7}
+
+\easysubproblem{Consider $X_n \sim U\parens{-\oneover{n}, \oneover{n}}$. Show that $X_n \convd 0$.}\spc{5}
+
+\intermediatesubproblem{Consider $X_n \sim U\parens{-\oneover{n}, \oneover{n}}$. Show that $X_n \convp 0$. For a full proof of $\forall \epsilon$, you need to show it for $\epsilon < 1$ and $\epsilon \geq 1$ separately but since we only care about small epsilon, you can just demonstrate it for $\epsilon < 1$.}\spc{7}
+
+\intermediatesubproblem{Consider $X_n \sim U\parens{-\oneover{n}, \oneover{n}}$. Show that $X_n \convLp{r} 0$ for all $r \geq 1$.}\spc{7}
+
+\intermediatesubproblem{If $X_n \sim \binomial{n}{\lambda / n}$ where $\lambda$ is a positive constant, show that $X_n \convd \poisson{\lambda}$. No need to prove the limit of the PMF again. You can write the result and quote the lecture. But then after that you need to provide the right logic by quoting the right theorems.}\spc{7}
+
+\intermediatesubproblem{If $X_n \sim \exponential{n}$, show that $X_n \convd 0$.}\spc{7}
+
+\intermediatesubproblem{If $X_n \sim \exponential{n}$, show that $X_n \convp 0$.}\spc{7}
+
+\intermediatesubproblem{If $X_n \sim \exponential{n}$, show that $X_n \convLp{1} 0$.}\spc{7}
+
+\hardsubproblem{[MA] Prove that PDF convergence implies convergence in distribution i.e. $X_n \convd X$. You need to use the dominated convergence theorem (DCT). Justifying the use of the DCT here is slightly harder so I'm not requiring that for this assignment.}\spc{7}
+
+\hardsubproblem{Let $X_n \sim f_{X_n}(x) = (1 - \cos{2\pi n x}) \indic{x \in \zeroonecl}$. Show that $X_n \convd \stduniform$. The CDF is pictured below for some $n$ values.}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.5in]{conv.jpg}
+\end{figure}~\spc{3}
+
+\intermediatesubproblem{[MA] Show that $\lim_{n \rightarrow \infty} f_{X_n} = (1 - \cos{2\pi n x}) \indic{x \in \zeroonecl}$ does not exist. This is a counterexample to the conjecture that CDF convergence implies PDF convergence for finite continuous distributions with a limiting continuous distribution. Hint: it is just a calculus exercise.}\spc{2}
+
+\end{enumerate}
+
+
+\problem{These questions are about the different flavors of the Weak Law of Large Numbers (the WLLN).}
+
+\begin{enumerate}
+\easysubproblem{Given $\Xoneton \iid$ with finite $\mu$ and $\sigsq$, show that $\Xbar_n \convp \mu$, the \qu{weak} WLLN.}\spc{3}
+
+\extracreditsubproblem{In class we defined convergence in probability only to a constant. This is a special case of converging to a degenerate distribution. You can define convergence in probability to a limiting random variable as follows:
+
+\beqn
+X_n \convp X \quad \text{means by definition that}\quad \lim _{n \rightarrow \infty }\prob{|X_{n}-X| > \epsilon}=0.
+\eeqn
+
+Prove that $X_n \convp X$ implies $X_n \convd X$. Try to do it yourself.}\spc{6}
+
+\hardsubproblem{[MA] The converse is not true. Prove that $X_n \convd X$ does not imply $X_n \convp X$. Prove this by finding a counterexample.}\spc{10}
+
+\extracreditsubproblem{As shown in the two previous problems, $\convp$ implies $\convd$ but not its converse. However there is a case where the converse is true: convergence to a constant. Prove that if $X_n \convd c$ then $X_n \convp c$. This is very hard. Look online if you absolutely have to but try yourself.}\spc{-0.5}
+
+\hardsubproblem{Given $\Xoneton \iid$ with finite $\mu$ but \emph{not finite} $\sigsq$, show that $\Xbar_n \convd \mu$. Hint: use the characteristic functions and a similar argument we used to prove the central limit theorem.}\spc{10}
+
+\easysubproblem{Use (d) and (e) to show that given $\Xoneton \iid$ with finite $\mu$ but \emph{not finite} $\sigsq$, show that $\Xbar_n \convp \mu$, the \qu{strong} WLLN. This is marked easy because you can string together the logic assuming you proved (d) / (e) even if you haven't done (d) / (e)!}\spc{3}
+
+\end{enumerate}
+
+
+
+\problem{Laws of Iterated Expectation and Total Variance}
+
+\begin{enumerate}
+\intermediatesubproblem{Let $Y | X = x \sim \normnot{a + bx}{\sigsq}$ where $a$ and $b$ are constants and $X \sim \exp{\lambda}$. Draw a picture of the joint density and the marginal densities along the axes.}\spc{5}
+
+\intermediatesubproblem{Find $\expe{Y}$ via the law of iterated expectation.}\spc{2}
+
+\hardsubproblem{Find $\var{Y}$ via the law of total variance.}\spc{5}
+\end{enumerate}
 
 
 
