@@ -1,0 +1,260 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 368 / 621 Fall \the\year{} \\ Final Examination}
+\author{Professor Adam Kapelner}
+
+\date{Wednesday, December 14, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is 105 minutes (variable time per question) and closed-book. You are allowed \textbf{three} pages (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\problem\timedsection{14} Let $X_1, X_2, \ldots$ be a sequence of independent rv's distributed as Deg$(\mu / n^2)$. Let $T_n := X_1 + X_2 + \ldots + X_n$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{18} 
+
+\begin{enumerate}[(a)]
+\item $X_1$ has no PMF
+\item $X_1$ has no CDF
+\item $X_1$ is zero with probability one
+\item The convolution of $X_1$ and $X_2$ is also degenerate
+\item The expectation of $X_1$ is $\mu$
+\item The variance of $X_1$ is $\mu^2$
+\item $\prob{X_1 \geq \mu} \leq 0$
+\item The chf of $X_1$ is $\mu$
+\item The chf of $X_1$ is $e^{it\mu}$
+\item The chf of $X_1$ is $\in \mathbb{L}^1$
+\item The chf of $X_1$ evaluated at 0 is 1
+\item The mgf of $X_1$ does not exist for some values of $t$ or $\mu$
+\item $X_n \convd 0$
+\item $X_n \convp 0$
+\item $X_n \convLp{1} 0$
+\item $X_n$ converges to zero in mean square
+\item $T_n \convd 0$
+\item $T_n$ does not converge in probability.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{7} Let $\X \sim$ Multinomial$(n, \bv{p})$ and $\phi_{\X}(\bv{t}) = \tothepow{p_1 e^{i t_1} + p_2 e^{i t_2} + \ldots + p_K e^{i t_K}}{n}$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{9} 
+
+\begin{enumerate}[(a)]
+\item $\onevec^\top \bv{p}$ = 1
+\item $\dime{\X} = K$
+\item $\Xoneton$ are independent
+\item $\Xoneton$ are identically distributed
+\item $X_3 \sim \binomial{n}{p_3}$
+\item The chf for $X_3$ is $\phi_{\X}\parens{\bracks{t_1~t_2~0~t_4~\ldots~t_K}^\top}$
+\item The chf for $X_3$ is $\phi_{\X}\parens{\bracks{~0~0~t~0~\ldots~0}^\top}$
+\item The chf for $X_3$ is $\tothepow{p_3 e^{i t} + p_4 e^{i t} \ldots + p_K e^{i t_K}}{n}$
+\item The chf for $X_3$ is $\tothepow{1 + p_3 e^{i t}  - p_3 }{n}$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{9} Let $X_1, X_2, \ldots$ be a sequence of iid rv's with mean $\mu$ and variance $\sigsq$ finite.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13} 
+
+\begin{enumerate}[(a)]
+\item $\Xbar_n$ is exactly normally distributed
+\item $\Xbar_n$ is approximately normally distributed
+\item The expectation of $\Xbar_n$ is exactly $\mu$
+\item The expectation of $\Xbar_n$ is approximately $\mu$
+\item The variance of $\Xbar_n$ is exactly $\sigsq / n$
+\item The variance of $\Xbar_n$ is approximately $\sigsq / n$
+\item $\Xbar_n \convd \mu$
+\item $\Xbar_n \convp \mu$
+\item $Z_n := \frac{\Xbar_n - \mu}{\sigma / \sqrt{n}} \convd \mu$
+\item $Z_n := \frac{\Xbar_n - \mu}{\sigma / \sqrt{n}} \convp \mu$
+\item $Z_n := \frac{\Xbar_n - \mu}{\sigma / \sqrt{n}} \convd \oneoversqrt{2\pi}e^{-z^2/2}$
+\item Regardless of whether (h) is true or not, it is the main result of the \qu{central limit theorem}
+\item Regardless of whether (k) is true or not, it is the main result of the \qu{central limit theorem}
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{19} Let $X \sim \chisq{k}$ and $Y~|~X = x \sim \uniform{0}{x}$. For this problem, you may need the following fact from Math 241: for $U \sim \uniform{a}{b}$,  $\var{U} = (b-a)^2 / 12$ and the following fact from this class: for $G \sim \gammanot{\alpha}{\beta}$, $\var{G} = \alpha / \beta^2$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{19} 
+
+\begin{enumerate}[(a)]
+\item $X$ and $Y$ are independent
+\item $X \sim \gammanot{k/2}{1/2}$
+\item The rv $Y$ is a compound distribution
+\item The rv $Y$ has one parameter
+\item $f^{old}_{X,Y}(x,y) = \oneover{2^k \Gammaf{k / 2}}x^{k/2 - 2} e^{-x/2}$
+\item $f^{old}_{X,Y}(x,y) = \oneover{2^k \Gammaf{k / 2}}x^{k/2 - 1} y^{-1} e^{-x/2}$
+\item $f_{X,Y}(x,y)$ is always defined
+\item $f_{X|Y}(x,y)$ is always defined
+\item $f_{Y|X}(y,x)$ cannot be computed given the information you have
+\item The support of the rv $Y$ is all real numbers
+\item The support of the rv $Y$ is all positive real numbers
+\item The expectation of $Y$ can be computed via $\int_\reals y \int_\reals f_{X,Y}(x,y) dx dy$  
+\item The expectation of $Y$ is $x/2$
+\item The expectation of $Y$ is $k/2$
+\item The expectation of $Y$ is $\sqrt{\pi}$
+\item The variance of $Y$ is $k^2 / 12$ 
+\item The variance of $Y~|~X$ is $X^2 / 12$ 
+\item The variance of $Y$ is $(8k + k^2) / 12$ 
+\item The variance of $Y$ cannot be computed given the information you have
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{18} Let $X \sim T_k$, $U = X^2$, $Y = \mu + \sigma X$ and $V = \mu + \sigma  U$ where $\mu \in \reals$, $\sigma > 0$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{16} 
+
+\begin{enumerate}[(a)]
+\item $X$ and $V$ are independent
+\item $f^{old}_X(x) = f_X(x) = \frac{\Gammaf{(k+1) / 2}}{\sqrt{k\pi} \Gammaf{k/2}} \tothepow{1 + x^2 / k}{-(k+1) / 2}$
+\item $\support{U} = [0, \infty)$
+\item $\support{V} = [0, \infty)$
+\item $\expe{X} = \mu$
+\item $\expe{Y} = \mu$
+\item $\expe{U} = \mu$
+\item $\expe{V} = \mu$
+\item $Y / V \sim $ Cauchy$(\mu,\sigma)$
+\item $\var{Y} = \sigsq$
+\item $f^{old}_Y(y) = f_Y(y) = \frac{\Gammaf{(k+1) / 2}}{\sigma\sqrt{k\pi} \Gammaf{k/2}} \tothepow{1 + (y - \mu)^2 / (k\sigsq)}{-(k+1) / 2}$
+\item $f^{old}_Y(y) = f_Y(y) = \mu + \sigma  \frac{\Gammaf{(k+1) / 2}}{\sqrt{k\pi} \Gammaf{k/2}} \tothepow{1 + y^2 / k}{-(k+1) / 2}$
+\item $U \sim F_{1,k}$
+\item $V \sim F_{\sigma,k}$ if $\mu=0$
+\item $f^{old}_U(u) = \frac{(1 + u / k)^{-(k+1) / 2}}{B(1/2, k/2) \sqrt{ku} }$
+\item $f^{old}_V(v) = \frac{(1 + v / (k\sigma))^{-(k+1) / 2}}{B(1/2, k/2) \sqrt{k\sigma v}}$ if $\mu=0$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{9} Let $\Xoneton \iid \normnot{\mu}{\sigsq}$ where $\mu$ and $\sigsq$ are finite and let $\Xbar = \oneover{n} \sum X_i$ and $S^2 = \oneover{n - 1} \sum (X_i - \Xbar)^2$. Let $Z_1 = (X_1 - \mu)/\sigma, Z_2 = (X_2 - \mu)/\sigma,\ldots, Z_n = (X_n - \mu)/\sigma$. Let $\Z = \bracks{Z_1~Z_2 ~\ldots~ Z_n}^\top$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item $\Xbar \sim \normnot{\mu}{\sigsq / n}$
+\item $\Xbar \sim \normnot{\mu}{\sigsq}$
+\item $S^2 \sim \chisq{n-1}$
+\item $S^2 \sim \gammanot{\frac{n-1}{2}}{\frac{n-1}{2\sigsq}}$
+\item $\Xbar$ and $S^2$ are independent
+\item $\bar{Z}$ and $S^2$ are independent
+\item There exists a matrix $A$ where $S^2 = \Z A \Z^\top$.
+\item There exists a matrix $A$ where $S^2 = \Z^\top A \Z$.
+\item If $\Z^\top \Z = \Z^\top B_1 \Z + \Z^\top B_2 \Z + \ldots + \Z^\top B_k\Z$, then $ \Z^\top B_1 \Z$ is chi-squared distributed
+\item If (e) is assumed, then Cochran's theorem can be proven
+\item If $a>0$, then $\prob{Z_1 > a} < \half$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{19} Let $\X \sim \multnormnot{n}{\muvec}{\Sigma}$ where $\Sigma$ is full rank, $A \in \reals^{m \times n}$,  $\bv{b} \in \reals^m$ and $\Y = A\X + \bv{b}$. Let $\mu_i$ denote the $i$th entry in $\muvec$ and let $\Sigma_{i,j}$ denote the entry on the $i$th row and $j$th column of matrix $\Sigma$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} 
+
+\begin{enumerate}[(a)]
+\item $\expe{\X} = \muvec$
+\item $\X - \muvec$ is a standard multivariate normal rv
+\item The kernel of the PDF of $\X$ is $e^{\x^\top \Sigma^{-1} \muvec - \x^\top \Sigma^{-1} \x / 2}$
+\item $\displaystyle\argmax_{\x \in \reals^n}\braces{f_{\X}(\x)} = \muvec$
+\item $\phi_{\X}(\bv{t}) = e^{i\bv{t}^\top \muvec - \bv{t}^\top \Sigma \bv{t} / 2}$
+\item $\phi_{\Y}(\bv{t}) = e^{i\bv{t} \bv{b}} \phi_{\X}(A^\top\bv{t})$
+\item $\int_0^\infty \int_0^\infty f_{\X}(x_1,x_2) dx_1 dx_2 = 1$ if $n=2$
+\item $X_1$ and $X_2$ would be independent if $\muvec = \zerovec$
+\item $X_1$ and $X_2$ could be independent regardless of the value of $\muvec$
+\item $\var{\X + \bv{b}} = \Sigma\bv{b}$ if $n=m$
+\item $A\X \sim \multnormnot{n}{\muvec}{A\Sigma}$
+\item $X_3 + X_7$ is normally distributed
+\item $X_3 / X_7$ is Cauchy distributed
+\item $\twovec{X_3}{X_7} \sim \multnormnot{2}{\twovec{\mu_3}{\mu_7}}{\twobytwomat{\Sigma_{3,3}}{\Sigma_{3,7}}{\Sigma_{3,7}}{\Sigma_{7,7}}}$
+\item $\var{X_1 + X_2} = \Sigma_{1,1} + \Sigma_{2,2} + \Sigma_{1,2} + \Sigma_{2,1}$
+\item $\X^\top \X \sim \chisq{n}$
+\item $(\Y - A\muvec - \bv{b})^\top \inverse{A \Sigma A^\top} (\Y - A\muvec - \bv{b})$ is always chi-squared distributed
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{10} Let $X, Y \iid \chisq{k}$ where $\mu$ and $\sigsq$ are finite and $a>0$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} 
+
+\begin{enumerate}[(a)]
+\item $\prob{X > a} \leq k / a$
+\item $\prob{2^X > a} \leq \expe{2^X} / a$
+\item $\prob{2^X > a} \leq 2^k / a$
+\item $Q[X, 1/e] \leq ek$
+\item $\prob{X > b} \leq \var{X} / (b-k)^2$ if $b \geq 2k$
+\item $\expe{\natlog{X}} \geq \natlog{\expe{X}}$
+\item $\expe{\natlog{X}} \leq \natlog{\expe{X}}$
+\item If $a$ was large, the Chernoff bound for $\prob{X > a}$ would be tighter (smaller) than the Markov bound for $\prob{X > a}$
+\item $\corr{X}{Y} \in \bracks{-1,1}$
+\item Computing the Cauchy-Schwartz upper bound is the most information you can provide about $\expe{XY}$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

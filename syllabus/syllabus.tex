@@ -3,6 +3,9 @@
 \usepackage[margin=0.90in]{geometry}
 \usepackage{hyperref}
 \usepackage{datetime}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
 \usepackage[auth-sc,affil-sl]{authblk}
 \usepackage{color}
 \usepackage{placeins}
@@ -55,31 +58,80 @@ Course Homepage & \href{https://github.com/kapelner/QC_Math_621_Fall_2020}{https
 
 \section*{Course Overview}
 
-MATH 368/621 is an introduction to the intermediate concepts and techniques of probability. Moreover it is a course on \textit{distribution theory} and contains derivations from scratch of $\approx$30 of the most commonly applied and studied probability models, and those models that are found when employing statistical tests. Thus, this class derives much of the theory behind statistics and data science. I plan to follow the curriculum when I taught the class previously and the homepage of the previous course can be found \href{https://github.com/kapelner/QC_Math_621_Fall_2017}{here} and \href{https://github.com/kapelner/QC_Math_621_Fall_2019}{here}. Topics to be tentatively covered are below (in rough order of coverage):
+MATH 368/621 is an introduction to the intermediate concepts and techniques of probability. Moreover it is a course on \textit{distribution theory} and contains derivations from scratch of $\approx$30 of the most commonly applied and studied probability models, and those models that are found when employing statistical tests. Thus, this class derives much of the theory behind statistics and data science. I plan to follow the curriculum when I taught the class previously and the homepage of the previous course can be found \href{https://github.com/kapelner/QC_Math_621_Fall_2017}{here} and \href{https://github.com/kapelner/QC_Math_621_Fall_2019}{here}. Lectures and their topics with time estimates are below:
 
-\begin{itemize}
-\itemsep -0.0em 
-\item Scalar discrete and continous random variables (rv's) and their PMFs, PDFs, CDFs using the indicator function, supports, parameter spaces, quantile functions.
-\begin{itemize}
-\item Discrete models include the Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Skellam and BetaBinomial
-\item Continuous models include the Uniform, Exponential, Erlang, Logistic, ParetoI, Laplace, Gumbel, Weibull, Frechet, Gamma, Beta, Lomax, Normal, LogNormal, Chi-squared, Student's T, Fisher-Snecodor's F and Cauchy
-\end{itemize}
-\item Survival modeling with some extreme value theory
-\item Vector-valued rv's including joint densities, conditional densities, expectation vectors, variance-covariance matrices, correlation matrices and models include the Multinomial and Multivariate Normal (and Mahalanobis Distance)
-\item The gamma function and the beta function (full, incomplete and regularized)
-\item Convolutions of discrete and continuous rv's
-\item The Poisson Process
-\item Law of Iterated Expecation and Law of Total Variance
-\item Transformation of single rv's (and multiple rv's using Jacobian determinants)
-\item Truncations of rv's
-\item CDF/PDF of order statistics of continuous rv's
-\item Mixture and compound distributions
-\item Scalar and vector characteristic functions, properties and Levy's Continuity Thm
-\item Central Limit Theorem and its implications, Weak Law of Large Numbers
-\item Cochran's Theorem, quadratic forms and the derivation of Student's T statistic, 
-\item Markov's, Chebyshev's, Chernoff, Cauchy-Schwartz, Jensen's and Holder's inequalities and consequences
-\item Convergence of rv's in distribution, probability and law (but not almost everywhere)
-\end{itemize}
+
+\begin{enumerate}
+\item[Lec 1] [10min] Review of discrete random variables (rvs), support; [10min] the Bernoulli rv, parameter space, degenerate rv, indicator functions; [10min] old-style probability mass functions (PMFs), new-style PMFs using the indicator function; [10min] cumulative distribution functions (CDFs), survival functions, [10min] vector rvs, joint mass functions (JMFs), independence, identical distributedness, iid; [25min] sum of two Bernoulli rvs, convolution operator, tree diagram for two rvs, conditional probability, marginal probability
+
+\item[Lec 2] [10min] Plotting the PMF of the convolution; [20min] discrete convolution formulas (general, independent rvs, iid rvs, old and new style), convolution support; [5min] visualizing convolutions as passing PMFs \qu{through each other}; [5min] defining combinatorial terms with indicator functions; [35min] Binomial rv with PMF derivation, Pascal's identity, Vandermonde's identity
+
+\item[Lec 3] [20min] Sequences of rv's, derivation of the geometric rv as a \qu{waiting time} or \qu{survival} distribution; [30min] convolution of geometric rvs, the negative binomial rv; [25min] derivation of the Poisson rv, convolution of Poisson rvs
+
+\item[Lec 4] [30min] Strategy to compute $\mathbb{P}(X > Y)$ for two rvs $X, Y$, the sum reindexing trick, geometric series; [25min] multinomial rv, multichoose notation; [20min] proof that multinomial's marginals are Binomial 
+
+\item[Lec 5] [30min] Proof that conditional multinomials are multinomial, indicator functions for undefinedness; [25min] review of expectation, variance, standard deviation, covariance of two rvs, covariance rules; [5min] expectation of vector rvs; [15min] variance-covariance matrix (varcov)
+
+\item[Lec 6] [5min] rules of expectation of vector rvs; [15min] rules of varcov and quadratic forms; [5min] Markowitz optimal portfolio theory application; [25] expectation and varcov of Multinomial rv; [5min] Uniform discrete rv; [15min] The negative of a discrete rv
+
+\item[Lec 7] [30min] derivation of the Skellam rv as the difference of two poissons; [10min] Conditional-on-sum calculation; [30min] Derivation of exponential rv from geometric via the CDF, non-existence of PMF, review of continuous rvs and the PDF
+
+\item[Lec 8] [35min] derivation of convolution formulas for continuous rvs; [35min] continuous uniform rv, convolution of two continuous uniform rvs
+
+\item[Lec 9] [25min] convolution of exponential rvs to derive the Erlang rv; [30min] gamma function, incomplete gamma functions, regularized incomplete gamma function, gamma function properties and identities; [20min] CDF of Erlang, CDF of Poisson
+
+\item[Lec 10] [15min] Poisson Process; [10min] Gamma rv and Extended Negative Binomial rv; [15min] transformations of discrete rvs to derive PMFs; [30min] transformations of continuous rvs to derive CDFs and PDFs; [10min] shift and scale PDF formulas for continuous rvs; [10min] derivation of the Logistic rv
+
+\item[Lec 11] [10min] logistic function and Logistic rv CDF; [35min] quantiles, percentiles and the median, quantile function for continous rvs; [20min] derivation of the Pareto rv PDF, CDF and quantile function; [15min] derivation of the Laplace rv
+
+\item[Lec 12] [10min] error distributions; [15min] derivation of the Weibull rv, memorylessness and the Weibull modulus; [50min] order statistics, CDF/PDF of minimum and maximum, CDF of arbitrary order statistics
+
+\item[Lec 13] [15min] derivation of the PDF of arbitrary order statistics; [15min] order statistics of iid Uniform rvs to derive the Beta rv; [15min] kernels of PMFs/PDFs; [15min] proof that convolution of Gamma rvs is a Gamma rv; [15min] the beta function, incomplete beta function, regularized beta function, the Gamma-Beta function identity, the CDF of the Beta rv
+
+\item[Lec 14] [35min] Multivariate transformations of rvs, Jacobian determinants; [10min] PDF of ratio of rv formulas; [10min] PDF of proportion of sum of rv formulas; [10min] proof that the proportion of sum of two Gamma rvs is a Beta rv; [10min] proof that the ratio of two Gamma rvs is a BetaPrime rv
+
+\item[Lec 15] [35min] mixture and compound rvs; [10min] derivation that the Poisson rv compounded with a Gamma rv is a ExtendedNegativeBinomial rv; [15min] derivation that the Binomial rv compounded with a Beta rv is the BetaBinomial rv; [15min] review of complex numbers, proof of Euler's famous formula relating 0, 1, $e$, $i$ and $\pi$.
+
+\item[Lec 16] [20min] basics of Fourier transform / analysis and Fourier inverse transform / synthesis, L1 integrable functions, statement of the Fourier inversion theorem, demo with singing voices; [40min] definition of characteristic functions (chfs) and properties 0, 1, ..., 8, definition of convergence in distribution for Levy's Continuity theorem; [5min] definition of moment generating functions (mgfs) and properties 0, 1, \ldots, 4; [10min] derivation of the chf for the Gamma rv and proof that two Gamma rvs convolved is a Gamma rv
+
+\item[Lec 17] [45min] Proof of the central limit theorem (CLT), derivation of the PDF of the standard Normal rv; [15min] derivation of the general Normal rv, its moments, its chf; [10min] proof that the convolution of two independent Normal rvs is a Normal rv; [5min] derivation of the LogNormal rv and an application in portfolio theory
+
+\item[Lec 18] [25min] derivation of the $\chi^2_n$ rv and its equivalence to a Gamma rv, derivation that scaled Gamma rvs are Gamma rvs, derivation of the $\chi_n$ rv; [20min] derivation of the F rv as the ratio of scaled $\chi^2_n$ rvs; [20min] derivation of Student's T rv as the ratio of a Normal rv to a scaled $\chi$ rv; [10min] derivation of the standard and general Cauchy rv
+
+\item[Lec 19] [5min] Proof that the expectation of the Cauchy rv doesn't exist; [10min] the physicist's derivation of the Cauchy rv; [15min] derivation that the scaled sample variance is a $\chi^2_n$ rv; [15min] quadratic forms embedded in $\chi^2_n$; [15min] Cochran's theorem; [15min] the independent of sample variance and sample average in the case of iid normal rvs
+
+\item[Lec 20] [5min] Derivation of that the t statistic is indeed distributed as Student's T rv; [10min] derivation of the standard MultivariateNormal rv; [20min] derivation of the general MultivariateNormal rv; [10min] multivariate chfs; [10min] chf of the MultivariateNormal rv; [10min] proof that the shifted and scaled MultivariateNormal rv is another MultivariateNormal rv; [10min] Mahalanobis distance
+
+\item[Lec 21] [10min] derivation of multivariate chf property that finds conditional distributions; [55min] derivation of the Markov tail bound and its corrollaries including Chebyshev's tail bound and Chernoff's tail bound; [10min] tail bounds for the Exponential rv
+
+\item[Lec 22] [20min] derivation of the Cauchy-Schwartz inequality and proof that correlation is bounded between -1 and +1; [20min] Jensen's inequality; [25min] convergence in distribution, proofs for PMF and CDF convergences; [10min] Convergence in probability to a constant
+
+\item[Lec 23] [15min] weak weak law of large numbers (WLLN); [40min] convergence in law, proof that convergence in law implies convergence in probability; [10min] law of iterated expectation; [10min] law of total variance
+\end{enumerate}
+
+%\begin{itemize}
+%\itemsep -0.0em 
+%\item Scalar discrete and continous random variables (rv's) and their PMFs, PDFs, CDFs using the indicator function, supports, parameter spaces, quantile functions.
+%\begin{itemize}
+%\item Discrete models include the Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Skellam and BetaBinomial
+%\item Continuous models include the Uniform, Exponential, Erlang, Logistic, ParetoI, Laplace, Gumbel, Weibull, Frechet, Gamma, Beta, Lomax, Normal, LogNormal, Chi-squared, Student's T, Fisher-Snecodor's F and Cauchy
+%\end{itemize}
+%\item Survival modeling with some extreme value theory
+%\item Vector-valued rv's including joint densities, conditional densities, expectation vectors, variance-covariance matrices, correlation matrices and models include the Multinomial and Multivariate Normal (and Mahalanobis Distance)
+%\item The gamma function and the beta function (full, incomplete and regularized)
+%\item Convolutions of discrete and continuous rv's
+%\item The Poisson Process
+%\item Law of Iterated Expecation and Law of Total Variance
+%\item Transformation of single rv's (and multiple rv's using Jacobian determinants)
+%\item Truncations of rv's
+%\item CDF/PDF of order statistics of continuous rv's
+%\item Mixture and compound distributions
+%\item Scalar and vector characteristic functions, properties and Levy's Continuity Thm
+%\item Central Limit Theorem and its implications, Weak Law of Large Numbers
+%\item Cochran's Theorem, quadratic forms and the derivation of Student's T statistic, 
+%\item Markov's, Chebyshev's, Chernoff, Cauchy-Schwartz, Jensen's and Holder's inequalities and consequences
+%\item Convergence of rv's in distribution, probability and law (but not almost everywhere)
+%\end{itemize}
 
 \textbf{This is more of a typical mathematics theory course than the rest of the data science series.} But we will still attempt to keep our eye on developing ideas and concepts for helping to make decisions in the real world. Thus we may make limited use of computation using the \texttt{R} statistical language.
 

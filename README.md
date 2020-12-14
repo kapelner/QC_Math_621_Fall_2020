@@ -54,7 +54,7 @@ c [(ProfB)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/lectur
 
 * Midterm I, September 23 (on zoom during regular class) [(exam)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm1/midterm1_solutions.pdf) 
 * Midterm II, November 4 (on zoom on 8PM for both sections) [(exam)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm2/midterm2.pdf) [(solutions)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/midterm2/midterm2_solutions.pdf)
-* Final, December 14 1:45-3:45PM (on zoom)
+* Final, December 14 1:45-3:45PM (on zoom) [(exam)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/final/final.pdf) [(solutions)](https://github.com/kapelner/QC_Math_621_Fall_2020/blob/master/exams/final/final_solutions.pdf)
 
 ## Practice Exams
 
